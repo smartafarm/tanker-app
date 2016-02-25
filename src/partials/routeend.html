@@ -1,0 +1,65 @@
+<h1>Route End</h1>
+<uib-accordion close-others="oneAtATime" >
+    <uib-accordion-group heading="+ Add Record" is-open="false" >
+        <form class="form-horizontal" name="newentry" id="newentry" style="font-size:85%" novalidate>        
+
+            <div class="col-md-12">
+                <div class="row">
+                    <md-datepicker style="margin-top:32px" class="col-md-3" ng-model="formdata.time" md-placeholder="Enter date"></md-datepicker>
+    
+                <div class="col-md-4">
+                    <uib-timepicker ng-model="formdata.time" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="true"></uib-timepicker>              
+                </div>
+                </div>
+                <md-input-container class="col-md-3">
+                    <label>Device ID</label>
+                    <input type="text" required name="did" ng-model="formdata.did">              
+                </md-input-container>                
+                <md-input-container class="col-md-2">
+                    <label>Lat</label>
+                    <input required name="lat" ng-model="formdata.lat">              
+                </md-input-container>
+                <md-input-container class="col-md-2">
+                    <label>Long</label>
+                    <input required name="long" ng-model="formdata.long">             
+                </md-input-container>
+                <md-input-container class="col-md-2">
+                    <label>Route ID</label>
+                    <input required name="rno" ng-model="formdata.rno">             
+                </md-input-container>      
+                <md-input-container class="col-md-2">
+                    <label>Factory Ref. #</label>
+                    <input required name="frno" ng-model="formdata.frno">            
+                </md-input-container>
+                <md-input-container class="col-md-4">
+                    <label>Sample Ice Box Avg. Temp</label>
+                    <input type = "number" required name="sibtemp" ng-model="formdata.sibtemp">             
+                </md-input-container>
+                <md-input-container class="col-md-4">
+                    <label>Milk Load Avg. Temp</label>
+                    <input type = "number" required name="mltemp" ng-model="formdata.mltemp">             
+                </md-input-container>                
+            </div>
+           <div class="row">
+            <div class="form-group col-md-12">
+                 <div  class="col-md-3">
+                   <button type="submit" class="btn btn-success" ng-click="ok()" ng-disabled = "newentry.$invalid"> + Add Record</button>
+                 </div>          
+               </div>
+           </div>
+  </form>
+    </uib-accordion-group>
+</uib-accordion>
+
+<div class="col-md-12 clearfix ">
+
+<div class="row" style="background-color:#eee;margin-top:10px">         
+     <div  
+     ui-grid="gridOptions" 
+     ui-grid-selection 
+     ui-grid-resize-columns 
+     ui-grid-pagination
+     ui-grid-edit
+     class="myGrid" style="margin-top: 20px;"></div>
+ </div>
+</div> 

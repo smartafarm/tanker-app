@@ -1,0 +1,1186 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'bower' ]
+2 info using npm@3.3.11
+3 info using node@v5.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData bower
+8 silly fetchNamedPackageData bower
+9 silly mapToRegistry name bower
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/bower
+13 verbose request uri https://registry.npmjs.org/bower
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 2:53:42 PM
+16 verbose request id d85a2ec96158a32c
+17 verbose etag "63FQ4RNA7MX51ALU0M4KOYKGS"
+18 http request GET https://registry.npmjs.org/bower
+19 http 200 https://registry.npmjs.org/bower
+20 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"BHSNNYX1IFIA3IMTOAYTLL489"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '169087',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Tue, 23 Feb 2016 03:53:42 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-syd1625-SYD',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1456199622.682090,VS0,VE180',
+20 verbose headers   vary: 'Accept' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+21 silly get     etag: '"BHSNNYX1IFIA3IMTOAYTLL489"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '169087',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Tue, 23 Feb 2016 03:53:42 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-syd1625-SYD',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1456199622.682090,VS0,VE180',
+21 silly get     vary: 'Accept' } ]
+22 verbose get saving bower to C:\Users\126163_Admin\AppData\Roaming\npm-cache\registry.npmjs.org\bower\.cache.json
+23 silly install normalizeTree
+24 silly loadCurrentTree Finishing
+25 silly loadIdealTree Starting
+26 silly install loadIdealTree
+27 silly cloneCurrentTree Starting
+28 silly install cloneCurrentTreeToIdealTree
+29 silly cloneCurrentTree Finishing
+30 silly loadShrinkwrap Starting
+31 silly install loadShrinkwrap
+32 silly loadShrinkwrap Finishing
+33 silly loadAllDepsIntoIdealTree Starting
+34 silly install loadAllDepsIntoIdealTree
+35 silly resolveWithNewModule bower@1.7.7 checking installable status
+36 silly cache add args [ 'bower', null ]
+37 verbose cache add spec bower
+38 silly cache add parsed spec Result {
+38 silly cache add   raw: 'bower',
+38 silly cache add   scope: null,
+38 silly cache add   name: 'bower',
+38 silly cache add   rawSpec: '',
+38 silly cache add   spec: '*',
+38 silly cache add   type: 'range' }
+39 silly addNamed bower@*
+40 verbose addNamed "*" is a valid semver range for bower
+41 silly addNameRange { name: 'bower', range: '*', hasData: false }
+42 silly mapToRegistry name bower
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/bower
+46 verbose addNameRange registry:https://registry.npmjs.org/bower not in flight; fetching
+47 verbose get https://registry.npmjs.org/bower not expired, no request
+48 silly addNameRange number 2 { name: 'bower', range: '*', hasData: true }
+49 silly addNameRange versions [ 'bower',
+49 silly addNameRange   [ '0.1.0',
+49 silly addNameRange     '0.1.2',
+49 silly addNameRange     '0.1.3',
+49 silly addNameRange     '0.2.0',
+49 silly addNameRange     '0.3.0',
+49 silly addNameRange     '0.3.1',
+49 silly addNameRange     '0.3.2',
+49 silly addNameRange     '0.4.0',
+49 silly addNameRange     '0.5.0',
+49 silly addNameRange     '0.5.1',
+49 silly addNameRange     '0.6.0',
+49 silly addNameRange     '0.6.1',
+49 silly addNameRange     '0.6.2',
+49 silly addNameRange     '0.6.3',
+49 silly addNameRange     '0.6.4',
+49 silly addNameRange     '0.6.5',
+49 silly addNameRange     '0.6.6',
+49 silly addNameRange     '0.6.7',
+49 silly addNameRange     '0.6.8',
+49 silly addNameRange     '0.7.0',
+49 silly addNameRange     '0.7.1',
+49 silly addNameRange     '0.8.0',
+49 silly addNameRange     '0.8.1',
+49 silly addNameRange     '0.8.2',
+49 silly addNameRange     '0.8.3',
+49 silly addNameRange     '0.8.4',
+49 silly addNameRange     '0.8.5',
+49 silly addNameRange     '0.8.6',
+49 silly addNameRange     '0.9.0',
+49 silly addNameRange     '0.9.1',
+49 silly addNameRange     '0.9.2',
+49 silly addNameRange     '0.10.0',
+49 silly addNameRange     '1.0.0',
+49 silly addNameRange     '1.0.1',
+49 silly addNameRange     '1.0.2',
+49 silly addNameRange     '1.0.3',
+49 silly addNameRange     '1.1.0',
+49 silly addNameRange     '1.1.1',
+49 silly addNameRange     '1.1.2',
+49 silly addNameRange     '1.2.0',
+49 silly addNameRange     '1.2.1',
+49 silly addNameRange     '1.2.2',
+49 silly addNameRange     '1.2.3',
+49 silly addNameRange     '1.2.4',
+49 silly addNameRange     '1.2.5',
+49 silly addNameRange     '1.2.6',
+49 silly addNameRange     '1.2.7',
+49 silly addNameRange     '1.2.8',
+49 silly addNameRange     '1.3.0',
+49 silly addNameRange     '1.3.1',
+49 silly addNameRange     '1.3.2',
+49 silly addNameRange     '1.3.3',
+49 silly addNameRange     '1.3.4',
+49 silly addNameRange     '1.3.5',
+49 silly addNameRange     '1.3.6',
+49 silly addNameRange     '1.3.7',
+49 silly addNameRange     '1.3.8',
+49 silly addNameRange     '1.3.9',
+49 silly addNameRange     '1.3.10',
+49 silly addNameRange     '1.3.11',
+49 silly addNameRange     '1.3.12',
+49 silly addNameRange     '1.4.0',
+49 silly addNameRange     '1.4.1',
+49 silly addNameRange     '1.5.0',
+49 silly addNameRange     '1.5.1',
+49 silly addNameRange     '1.5.2',
+49 silly addNameRange     '1.5.3',
+49 silly addNameRange     '1.6.2',
+49 silly addNameRange     '1.6.3',
+49 silly addNameRange     '1.6.4',
+49 silly addNameRange     '1.6.5',
+49 silly addNameRange     '1.5.4',
+49 silly addNameRange     '1.4.2',
+49 silly addNameRange     '1.6.6',
+49 silly addNameRange     '1.6.7',
+49 silly addNameRange     '1.6.8',
+49 silly addNameRange     '1.6.9',
+49 silly addNameRange     '1.7.0',
+49 silly addNameRange     '1.7.1',
+49 silly addNameRange     '1.7.2',
+49 silly addNameRange     '1.7.5',
+49 silly addNameRange     '1.7.6',
+49 silly addNameRange     '1.7.7' ] ]
+50 silly addNamed bower@1.7.7
+51 verbose addNamed "1.7.7" is a plain semver version for bower
+52 silly mapToRegistry name bower
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/bower
+56 verbose addRemoteTarball https://registry.npmjs.org/bower/-/bower-1.7.7.tgz not in flight; adding
+57 verbose addRemoteTarball [ 'https://registry.npmjs.org/bower/-/bower-1.7.7.tgz',
+57 verbose addRemoteTarball   '2fd7ff3ebdcba5a8ffcd84c397c8fdfe9f825f92' ]
+58 info retry fetch attempt 1 at 2:53:43 PM
+59 info attempt registry request try #1 at 2:53:43 PM
+60 http fetch GET https://registry.npmjs.org/bower/-/bower-1.7.7.tgz
+61 http fetch 200 https://registry.npmjs.org/bower/-/bower-1.7.7.tgz
+62 silly fetchAndShaCheck shasum 2fd7ff3ebdcba5a8ffcd84c397c8fdfe9f825f92
+63 verbose addTmpTarball C:\Users\126163~1\AppData\Local\Temp\npm-12608-8efb5468\registry.npmjs.org\bower\-\bower-1.7.7.tgz not in flight; adding
+64 verbose addTmpTarball already have metadata; skipping unpack for bower@1.7.7
+65 silly cache afterAdd bower@1.7.7
+66 verbose afterAdd C:\Users\126163_Admin\AppData\Roaming\npm-cache\bower\1.7.7\package\package.json not in flight; writing
+67 verbose afterAdd C:\Users\126163_Admin\AppData\Roaming\npm-cache\bower\1.7.7\package\package.json written
+68 silly loadAllDepsIntoIdealTree Finishing
+69 silly idealTree:prePrune nodejs
+69 silly idealTree:prePrune └── bower@1.7.7
+70 silly loadIdealTree Finishing
+71 silly currentTree nodejs
+71 silly currentTree └─┬ bower@1.7.1
+71 silly currentTree   ├── abbrev@1.0.7
+71 silly currentTree   ├── archy@1.0.0
+71 silly currentTree   ├─┬ bower-config@1.3.0
+71 silly currentTree   │ ├── graceful-fs@4.1.2
+71 silly currentTree   │ ├─┬ optimist@0.6.1
+71 silly currentTree   │ │ ├── minimist@0.0.10
+71 silly currentTree   │ │ └── wordwrap@0.0.3
+71 silly currentTree   │ ├─┬ osenv@0.1.3
+71 silly currentTree   │ │ ├── os-homedir@1.0.1
+71 silly currentTree   │ │ └── os-tmpdir@1.0.1
+71 silly currentTree   │ └─┬ untildify@2.1.0
+71 silly currentTree   │   └── os-homedir@1.0.1
+71 silly currentTree   ├── bower-endpoint-parser@0.2.2
+71 silly currentTree   ├─┬ bower-json@0.4.0
+71 silly currentTree   │ ├── deep-extend@0.2.11
+71 silly currentTree   │ ├── graceful-fs@2.0.3
+71 silly currentTree   │ └── intersect@0.0.3
+71 silly currentTree   ├── bower-logger@0.2.2
+71 silly currentTree   ├─┬ bower-registry-client@1.0.0
+71 silly currentTree   │ ├── async@0.2.10
+71 silly currentTree   │ ├── graceful-fs@4.1.2
+71 silly currentTree   │ ├── mkdirp@0.3.5
+71 silly currentTree   │ └── request-replay@0.2.0
+71 silly currentTree   ├─┬ cardinal@0.4.4
+71 silly currentTree   │ ├── ansicolors@0.2.1
+71 silly currentTree   │ └─┬ redeyed@0.4.4
+71 silly currentTree   │   └── esprima@1.0.4
+71 silly currentTree   ├─┬ chalk@1.1.1
+71 silly currentTree   │ ├── ansi-styles@2.1.0
+71 silly currentTree   │ ├── escape-string-regexp@1.0.3
+71 silly currentTree   │ ├─┬ has-ansi@2.0.0
+71 silly currentTree   │ │ └── ansi-regex@2.0.0
+71 silly currentTree   │ ├─┬ strip-ansi@3.0.0
+71 silly currentTree   │ │ └── ansi-regex@2.0.0
+71 silly currentTree   │ └── supports-color@2.0.0
+71 silly currentTree   ├── chmodr@1.0.2
+71 silly currentTree   ├─┬ configstore@0.3.2
+71 silly currentTree   │ ├─┬ js-yaml@3.4.6
+71 silly currentTree   │ │ ├─┬ argparse@1.0.3
+71 silly currentTree   │ │ │ ├── lodash@3.10.1
+71 silly currentTree   │ │ │ └── sprintf-js@1.0.3
+71 silly currentTree   │ │ ├── esprima@2.7.1
+71 silly currentTree   │ │ └── inherit@2.2.2
+71 silly currentTree   │ ├── object-assign@2.1.1
+71 silly currentTree   │ ├─┬ osenv@0.1.3
+71 silly currentTree   │ │ ├── os-homedir@1.0.1
+71 silly currentTree   │ │ └── os-tmpdir@1.0.1
+71 silly currentTree   │ ├── uuid@2.0.1
+71 silly currentTree   │ └── xdg-basedir@1.0.1
+71 silly currentTree   ├─┬ decompress-zip@0.1.0
+71 silly currentTree   │ ├─┬ binary@0.3.0
+71 silly currentTree   │ │ ├── buffers@0.1.1
+71 silly currentTree   │ │ └─┬ chainsaw@0.1.0
+71 silly currentTree   │ │   └── traverse@0.3.9
+71 silly currentTree   │ ├── mkpath@0.1.0
+71 silly currentTree   │ ├─┬ readable-stream@1.1.13
+71 silly currentTree   │ │ ├── core-util-is@1.0.2
+71 silly currentTree   │ │ ├── inherits@2.0.1
+71 silly currentTree   │ │ ├── isarray@0.0.1
+71 silly currentTree   │ │ └── string_decoder@0.10.31
+71 silly currentTree   │ └─┬ touch@0.0.3
+71 silly currentTree   │   └── nopt@1.0.10
+71 silly currentTree   ├── destroy@1.0.3
+71 silly currentTree   ├─┬ fs-write-stream-atomic@1.0.7
+71 silly currentTree   │ ├── graceful-fs@4.1.2
+71 silly currentTree   │ ├── iferr@0.1.5
+71 silly currentTree   │ ├── imurmurhash@0.1.4
+71 silly currentTree   │ └─┬ readable-stream@2.0.4
+71 silly currentTree   │   ├── core-util-is@1.0.2
+71 silly currentTree   │   ├── inherits@2.0.1
+71 silly currentTree   │   ├── isarray@0.0.1
+71 silly currentTree   │   ├── process-nextick-args@1.0.6
+71 silly currentTree   │   ├── string_decoder@0.10.31
+71 silly currentTree   │   └── util-deprecate@1.0.2
+71 silly currentTree   ├─┬ fstream-ignore@1.0.3
+71 silly currentTree   │ ├── inherits@2.0.1
+71 silly currentTree   │ └─┬ minimatch@3.0.0
+71 silly currentTree   │   └─┬ brace-expansion@1.1.2
+71 silly currentTree   │     ├── balanced-match@0.3.0
+71 silly currentTree   │     └── concat-map@0.0.1
+71 silly currentTree   ├─┬ fstream@1.0.8
+71 silly currentTree   │ ├── graceful-fs@4.1.2
+71 silly currentTree   │ └── inherits@2.0.1
+71 silly currentTree   ├─┬ github@0.2.4
+71 silly currentTree   │ └── mime@1.3.4
+71 silly currentTree   ├─┬ glob@4.5.3
+71 silly currentTree   │ ├─┬ inflight@1.0.4
+71 silly currentTree   │ │ └── wrappy@1.0.1
+71 silly currentTree   │ ├── inherits@2.0.1
+71 silly currentTree   │ ├─┬ minimatch@2.0.10
+71 silly currentTree   │ │ └─┬ brace-expansion@1.1.2
+71 silly currentTree   │ │   ├── balanced-match@0.3.0
+71 silly currentTree   │ │   └── concat-map@0.0.1
+71 silly currentTree   │ └─┬ once@1.3.3
+71 silly currentTree   │   └── wrappy@1.0.1
+71 silly currentTree   ├── graceful-fs@3.0.8
+71 silly currentTree   ├─┬ handlebars@2.0.0
+71 silly currentTree   │ ├─┬ optimist@0.3.7
+71 silly currentTree   │ │ └── wordwrap@0.0.3
+71 silly currentTree   │ └─┬ uglify-js@2.3.6
+71 silly currentTree   │   ├── async@0.2.10
+71 silly currentTree   │   └─┬ source-map@0.1.43
+71 silly currentTree   │     └── amdefine@1.0.0
+71 silly currentTree   ├─┬ inquirer@0.10.0
+71 silly currentTree   │ ├── ansi-escapes@1.1.0
+71 silly currentTree   │ ├── ansi-regex@2.0.0
+71 silly currentTree   │ ├─┬ cli-cursor@1.0.2
+71 silly currentTree   │ │ └─┬ restore-cursor@1.0.1
+71 silly currentTree   │ │   ├── exit-hook@1.1.1
+71 silly currentTree   │ │   └── onetime@1.0.0
+71 silly currentTree   │ ├── cli-width@1.1.0
+71 silly currentTree   │ ├── figures@1.4.0
+71 silly currentTree   │ ├── lodash@3.10.1
+71 silly currentTree   │ ├─┬ readline2@1.0.1
+71 silly currentTree   │ │ ├─┬ code-point-at@1.0.0
+71 silly currentTree   │ │ │ └── number-is-nan@1.0.0
+71 silly currentTree   │ │ ├─┬ is-fullwidth-code-point@1.0.0
+71 silly currentTree   │ │ │ └── number-is-nan@1.0.0
+71 silly currentTree   │ │ └── mute-stream@0.0.5
+71 silly currentTree   │ ├─┬ run-async@0.1.0
+71 silly currentTree   │ │ └─┬ once@1.3.3
+71 silly currentTree   │ │   └── wrappy@1.0.1
+71 silly currentTree   │ ├── rx-lite@3.1.2
+71 silly currentTree   │ ├── strip-ansi@3.0.0
+71 silly currentTree   │ └── through@2.3.8
+71 silly currentTree   ├─┬ insight@0.7.0
+71 silly currentTree   │ ├── async@1.5.0
+71 silly currentTree   │ ├─┬ configstore@1.4.0
+71 silly currentTree   │ │ ├── graceful-fs@4.1.2
+71 silly currentTree   │ │ ├── os-tmpdir@1.0.1
+71 silly currentTree   │ │ ├─┬ osenv@0.1.3
+71 silly currentTree   │ │ │ └── os-homedir@1.0.1
+71 silly currentTree   │ │ ├── uuid@2.0.1
+71 silly currentTree   │ │ ├─┬ write-file-atomic@1.1.4
+71 silly currentTree   │ │ │ ├── imurmurhash@0.1.4
+71 silly currentTree   │ │ │ └── slide@1.1.6
+71 silly currentTree   │ │ └─┬ xdg-basedir@2.0.0
+71 silly currentTree   │ │   └── os-homedir@1.0.1
+71 silly currentTree   │ ├─┬ lodash.debounce@3.1.1
+71 silly currentTree   │ │ └── lodash._getnative@3.9.1
+71 silly currentTree   │ ├── object-assign@4.0.1
+71 silly currentTree   │ ├─┬ os-name@1.0.3
+71 silly currentTree   │ │ ├─┬ osx-release@1.1.0
+71 silly currentTree   │ │ │ └── minimist@1.2.0
+71 silly currentTree   │ │ └─┬ win-release@1.1.1
+71 silly currentTree   │ │   └── semver@5.1.0
+71 silly currentTree   │ └── tough-cookie@2.2.1
+71 silly currentTree   ├── is-root@1.0.0
+71 silly currentTree   ├── junk@1.0.2
+71 silly currentTree   ├── lockfile@1.0.1
+71 silly currentTree   ├── lru-cache@2.7.3
+71 silly currentTree   ├─┬ md5-hex@1.1.0
+71 silly currentTree   │ └── md5-o-matic@0.1.1
+71 silly currentTree   ├─┬ mkdirp@0.5.0
+71 silly currentTree   │ └── minimist@0.0.8
+71 silly currentTree   ├── mout@0.11.1
+71 silly currentTree   ├── nopt@3.0.6
+71 silly currentTree   ├── opn@1.0.2
+71 silly currentTree   ├─┬ p-throttler@0.1.1
+71 silly currentTree   │ └── q@0.9.7
+71 silly currentTree   ├─┬ promptly@0.2.0
+71 silly currentTree   │ └─┬ read@1.0.7
+71 silly currentTree   │   └── mute-stream@0.0.5
+71 silly currentTree   ├── q@1.4.1
+71 silly currentTree   ├─┬ request-progress@0.3.1
+71 silly currentTree   │ └── throttleit@0.0.2
+71 silly currentTree   ├─┬ request@2.53.0
+71 silly currentTree   │ ├── aws-sign2@0.5.0
+71 silly currentTree   │ ├─┬ bl@0.9.4
+71 silly currentTree   │ │ └─┬ readable-stream@1.0.33
+71 silly currentTree   │ │   ├── core-util-is@1.0.2
+71 silly currentTree   │ │   ├── inherits@2.0.1
+71 silly currentTree   │ │   ├── isarray@0.0.1
+71 silly currentTree   │ │   └── string_decoder@0.10.31
+71 silly currentTree   │ ├── caseless@0.9.0
+71 silly currentTree   │ ├─┬ combined-stream@0.0.7
+71 silly currentTree   │ │ └── delayed-stream@0.0.5
+71 silly currentTree   │ ├── forever-agent@0.5.2
+71 silly currentTree   │ ├─┬ form-data@0.2.0
+71 silly currentTree   │ │ └── async@0.9.2
+71 silly currentTree   │ ├─┬ hawk@2.3.1
+71 silly currentTree   │ │ ├── boom@2.10.1
+71 silly currentTree   │ │ ├── cryptiles@2.0.5
+71 silly currentTree   │ │ ├── hoek@2.16.3
+71 silly currentTree   │ │ └── sntp@1.0.9
+71 silly currentTree   │ ├─┬ http-signature@0.10.1
+71 silly currentTree   │ │ ├── asn1@0.1.11
+71 silly currentTree   │ │ ├── assert-plus@0.1.5
+71 silly currentTree   │ │ └── ctype@0.5.3
+71 silly currentTree   │ ├── isstream@0.1.2
+71 silly currentTree   │ ├── json-stringify-safe@5.0.1
+71 silly currentTree   │ ├─┬ mime-types@2.0.14
+71 silly currentTree   │ │ └── mime-db@1.12.0
+71 silly currentTree   │ ├── node-uuid@1.4.7
+71 silly currentTree   │ ├── oauth-sign@0.6.0
+71 silly currentTree   │ ├── qs@2.3.3
+71 silly currentTree   │ ├── stringstream@0.0.5
+71 silly currentTree   │ ├── tough-cookie@2.2.1
+71 silly currentTree   │ └── tunnel-agent@0.4.2
+71 silly currentTree   ├── retry@0.6.1
+71 silly currentTree   ├─┬ rimraf@2.4.4
+71 silly currentTree   │ └─┬ glob@5.0.15
+71 silly currentTree   │   ├─┬ inflight@1.0.4
+71 silly currentTree   │   │ └── wrappy@1.0.1
+71 silly currentTree   │   ├── inherits@2.0.1
+71 silly currentTree   │   ├─┬ minimatch@3.0.0
+71 silly currentTree   │   │ └─┬ brace-expansion@1.1.2
+71 silly currentTree   │   │   ├── balanced-match@0.3.0
+71 silly currentTree   │   │   └── concat-map@0.0.1
+71 silly currentTree   │   ├─┬ once@1.3.3
+71 silly currentTree   │   │ └── wrappy@1.0.1
+71 silly currentTree   │   └── path-is-absolute@1.0.0
+71 silly currentTree   ├── semver-utils@1.1.1
+71 silly currentTree   ├── semver@2.3.2
+71 silly currentTree   ├─┬ shell-quote@1.4.3
+71 silly currentTree   │ ├── array-filter@0.0.1
+71 silly currentTree   │ ├── array-map@0.0.0
+71 silly currentTree   │ ├── array-reduce@0.0.0
+71 silly currentTree   │ └── jsonify@0.0.0
+71 silly currentTree   ├── stringify-object@1.0.1
+71 silly currentTree   ├─┬ tar-fs@1.8.1
+71 silly currentTree   │ ├─┬ pump@1.0.1
+71 silly currentTree   │ │ ├── end-of-stream@1.1.0
+71 silly currentTree   │ │ └─┬ once@1.3.3
+71 silly currentTree   │ │   └── wrappy@1.0.1
+71 silly currentTree   │ └─┬ tar-stream@1.3.1
+71 silly currentTree   │   ├── bl@1.0.0
+71 silly currentTree   │   ├─┬ end-of-stream@1.1.0
+71 silly currentTree   │   │ └─┬ once@1.3.3
+71 silly currentTree   │   │   └── wrappy@1.0.1
+71 silly currentTree   │   ├─┬ readable-stream@2.0.4
+71 silly currentTree   │   │ ├── core-util-is@1.0.2
+71 silly currentTree   │   │ ├── inherits@2.0.1
+71 silly currentTree   │   │ ├── isarray@0.0.1
+71 silly currentTree   │   │ ├── process-nextick-args@1.0.6
+71 silly currentTree   │   │ ├── string_decoder@0.10.31
+71 silly currentTree   │   │ └── util-deprecate@1.0.2
+71 silly currentTree   │   └── xtend@4.0.1
+71 silly currentTree   ├── tmp@0.0.24
+71 silly currentTree   ├─┬ update-notifier@0.6.0
+71 silly currentTree   │ ├─┬ configstore@1.4.0
+71 silly currentTree   │ │ ├── graceful-fs@4.1.2
+71 silly currentTree   │ │ ├── object-assign@4.0.1
+71 silly currentTree   │ │ ├── os-tmpdir@1.0.1
+71 silly currentTree   │ │ ├─┬ osenv@0.1.3
+71 silly currentTree   │ │ │ └── os-homedir@1.0.1
+71 silly currentTree   │ │ ├── uuid@2.0.1
+71 silly currentTree   │ │ ├─┬ write-file-atomic@1.1.4
+71 silly currentTree   │ │ │ ├── imurmurhash@0.1.4
+71 silly currentTree   │ │ │ └── slide@1.1.6
+71 silly currentTree   │ │ └─┬ xdg-basedir@2.0.0
+71 silly currentTree   │ │   └── os-homedir@1.0.1
+71 silly currentTree   │ ├── is-npm@1.0.0
+71 silly currentTree   │ ├─┬ latest-version@2.0.0
+71 silly currentTree   │ │ └─┬ package-json@2.3.0
+71 silly currentTree   │ │   ├─┬ got@5.2.0
+71 silly currentTree   │ │   │ ├─┬ create-error-class@2.0.1
+71 silly currentTree   │ │   │ │ ├── capture-stack-trace@1.0.0
+71 silly currentTree   │ │   │ │ └── inherits@2.0.1
+71 silly currentTree   │ │   │ ├─┬ duplexify@3.4.2
+71 silly currentTree   │ │   │ │ ├─┬ end-of-stream@1.0.0
+71 silly currentTree   │ │   │ │ │ └─┬ once@1.3.3
+71 silly currentTree   │ │   │ │ │   └── wrappy@1.0.1
+71 silly currentTree   │ │   │ │ └─┬ readable-stream@2.0.4
+71 silly currentTree   │ │   │ │   ├── core-util-is@1.0.2
+71 silly currentTree   │ │   │ │   ├── inherits@2.0.1
+71 silly currentTree   │ │   │ │   ├── isarray@0.0.1
+71 silly currentTree   │ │   │ │   ├── process-nextick-args@1.0.6
+71 silly currentTree   │ │   │ │   ├── string_decoder@0.10.31
+71 silly currentTree   │ │   │ │   └── util-deprecate@1.0.2
+71 silly currentTree   │ │   │ ├── is-plain-obj@1.1.0
+71 silly currentTree   │ │   │ ├── is-redirect@1.0.0
+71 silly currentTree   │ │   │ ├── is-stream@1.0.1
+71 silly currentTree   │ │   │ ├── lowercase-keys@1.0.0
+71 silly currentTree   │ │   │ ├── node-status-codes@1.0.0
+71 silly currentTree   │ │   │ ├── object-assign@4.0.1
+71 silly currentTree   │ │   │ ├─┬ parse-json@2.2.0
+71 silly currentTree   │ │   │ │ └─┬ error-ex@1.3.0
+71 silly currentTree   │ │   │ │   └── is-arrayish@0.2.1
+71 silly currentTree   │ │   │ ├─┬ pinkie-promise@2.0.0
+71 silly currentTree   │ │   │ │ └── pinkie@2.0.1
+71 silly currentTree   │ │   │ ├─┬ read-all-stream@3.0.1
+71 silly currentTree   │ │   │ │ ├─┬ pinkie-promise@1.0.0
+71 silly currentTree   │ │   │ │ │ └── pinkie@1.0.0
+71 silly currentTree   │ │   │ │ └─┬ readable-stream@2.0.4
+71 silly currentTree   │ │   │ │   ├── core-util-is@1.0.2
+71 silly currentTree   │ │   │ │   ├── inherits@2.0.1
+71 silly currentTree   │ │   │ │   ├── isarray@0.0.1
+71 silly currentTree   │ │   │ │   ├── process-nextick-args@1.0.6
+71 silly currentTree   │ │   │ │   ├── string_decoder@0.10.31
+71 silly currentTree   │ │   │ │   └── util-deprecate@1.0.2
+71 silly currentTree   │ │   │ ├── timed-out@2.0.0
+71 silly currentTree   │ │   │ ├── unzip-response@1.0.0
+71 silly currentTree   │ │   │ └─┬ url-parse-lax@1.0.0
+71 silly currentTree   │ │   │   └── prepend-http@1.0.3
+71 silly currentTree   │ │   ├─┬ rc@1.1.5
+71 silly currentTree   │ │   │ ├── deep-extend@0.4.0
+71 silly currentTree   │ │   │ ├── ini@1.3.4
+71 silly currentTree   │ │   │ ├── minimist@1.2.0
+71 silly currentTree   │ │   │ └── strip-json-comments@1.0.4
+71 silly currentTree   │ │   ├── registry-url@3.0.3
+71 silly currentTree   │ │   └── semver@5.1.0
+71 silly currentTree   │ ├─┬ repeating@2.0.0
+71 silly currentTree   │ │ └─┬ is-finite@1.0.1
+71 silly currentTree   │ │   └── number-is-nan@1.0.0
+71 silly currentTree   │ ├─┬ semver-diff@2.1.0
+71 silly currentTree   │ │ └── semver@5.1.0
+71 silly currentTree   │ └─┬ string-length@1.0.1
+71 silly currentTree   │   └─┬ strip-ansi@3.0.0
+71 silly currentTree   │     └── ansi-regex@2.0.0
+71 silly currentTree   ├── user-home@1.1.1
+71 silly currentTree   └─┬ which@1.2.0
+71 silly currentTree     └─┬ is-absolute@0.1.7
+71 silly currentTree       └── is-relative@0.1.3
+72 silly idealTree nodejs
+72 silly idealTree └── bower@1.7.7
+73 silly generateActionsToTake Starting
+74 silly install generateActionsToTake
+75 silly generateActionsToTake Finishing
+76 silly diffTrees action count 315
+77 silly diffTrees remove abbrev@1.0.7
+78 silly diffTrees remove archy@1.0.0
+79 silly diffTrees remove graceful-fs@4.1.2
+80 silly diffTrees remove minimist@0.0.10
+81 silly diffTrees remove wordwrap@0.0.3
+82 silly diffTrees remove optimist@0.6.1
+83 silly diffTrees remove os-homedir@1.0.1
+84 silly diffTrees remove os-tmpdir@1.0.1
+85 silly diffTrees remove osenv@0.1.3
+86 silly diffTrees remove os-homedir@1.0.1
+87 silly diffTrees remove untildify@2.1.0
+88 silly diffTrees remove bower-endpoint-parser@0.2.2
+89 silly diffTrees remove deep-extend@0.2.11
+90 silly diffTrees remove graceful-fs@2.0.3
+91 silly diffTrees remove intersect@0.0.3
+92 silly diffTrees remove bower-json@0.4.0
+93 silly diffTrees remove bower-logger@0.2.2
+94 silly diffTrees remove async@0.2.10
+95 silly diffTrees remove graceful-fs@4.1.2
+96 silly diffTrees remove mkdirp@0.3.5
+97 silly diffTrees remove ansicolors@0.2.1
+98 silly diffTrees remove esprima@1.0.4
+99 silly diffTrees remove redeyed@0.4.4
+100 silly diffTrees remove cardinal@0.4.4
+101 silly diffTrees remove ansi-styles@2.1.0
+102 silly diffTrees remove escape-string-regexp@1.0.3
+103 silly diffTrees remove ansi-regex@2.0.0
+104 silly diffTrees remove has-ansi@2.0.0
+105 silly diffTrees remove ansi-regex@2.0.0
+106 silly diffTrees remove strip-ansi@3.0.0
+107 silly diffTrees remove supports-color@2.0.0
+108 silly diffTrees remove chalk@1.1.1
+109 silly diffTrees remove chmodr@1.0.2
+110 silly diffTrees remove lodash@3.10.1
+111 silly diffTrees remove sprintf-js@1.0.3
+112 silly diffTrees remove argparse@1.0.3
+113 silly diffTrees remove esprima@2.7.1
+114 silly diffTrees remove inherit@2.2.2
+115 silly diffTrees remove js-yaml@3.4.6
+116 silly diffTrees remove object-assign@2.1.1
+117 silly diffTrees remove os-homedir@1.0.1
+118 silly diffTrees remove os-tmpdir@1.0.1
+119 silly diffTrees remove osenv@0.1.3
+120 silly diffTrees remove uuid@2.0.1
+121 silly diffTrees remove buffers@0.1.1
+122 silly diffTrees remove traverse@0.3.9
+123 silly diffTrees remove chainsaw@0.1.0
+124 silly diffTrees remove binary@0.3.0
+125 silly diffTrees remove mkpath@0.1.0
+126 silly diffTrees remove core-util-is@1.0.2
+127 silly diffTrees remove inherits@2.0.1
+128 silly diffTrees remove isarray@0.0.1
+129 silly diffTrees remove string_decoder@0.10.31
+130 silly diffTrees remove readable-stream@1.1.13
+131 silly diffTrees remove nopt@1.0.10
+132 silly diffTrees remove touch@0.0.3
+133 silly diffTrees remove destroy@1.0.3
+134 silly diffTrees remove graceful-fs@4.1.2
+135 silly diffTrees remove iferr@0.1.5
+136 silly diffTrees remove imurmurhash@0.1.4
+137 silly diffTrees remove core-util-is@1.0.2
+138 silly diffTrees remove inherits@2.0.1
+139 silly diffTrees remove isarray@0.0.1
+140 silly diffTrees remove process-nextick-args@1.0.6
+141 silly diffTrees remove string_decoder@0.10.31
+142 silly diffTrees remove util-deprecate@1.0.2
+143 silly diffTrees remove readable-stream@2.0.4
+144 silly diffTrees remove fs-write-stream-atomic@1.0.7
+145 silly diffTrees remove inherits@2.0.1
+146 silly diffTrees remove balanced-match@0.3.0
+147 silly diffTrees remove concat-map@0.0.1
+148 silly diffTrees remove brace-expansion@1.1.2
+149 silly diffTrees remove minimatch@3.0.0
+150 silly diffTrees remove graceful-fs@4.1.2
+151 silly diffTrees remove inherits@2.0.1
+152 silly diffTrees remove mime@1.3.4
+153 silly diffTrees remove github@0.2.4
+154 silly diffTrees remove wrappy@1.0.1
+155 silly diffTrees remove inherits@2.0.1
+156 silly diffTrees remove balanced-match@0.3.0
+157 silly diffTrees remove concat-map@0.0.1
+158 silly diffTrees remove brace-expansion@1.1.2
+159 silly diffTrees remove minimatch@2.0.10
+160 silly diffTrees remove wrappy@1.0.1
+161 silly diffTrees remove once@1.3.3
+162 silly diffTrees remove inflight@1.0.4
+163 silly diffTrees remove glob@4.5.3
+164 silly diffTrees remove graceful-fs@3.0.8
+165 silly diffTrees remove wordwrap@0.0.3
+166 silly diffTrees remove optimist@0.3.7
+167 silly diffTrees remove async@0.2.10
+168 silly diffTrees remove amdefine@1.0.0
+169 silly diffTrees remove source-map@0.1.43
+170 silly diffTrees remove uglify-js@2.3.6
+171 silly diffTrees remove handlebars@2.0.0
+172 silly diffTrees remove ansi-escapes@1.1.0
+173 silly diffTrees remove ansi-regex@2.0.0
+174 silly diffTrees remove exit-hook@1.1.1
+175 silly diffTrees remove onetime@1.0.0
+176 silly diffTrees remove restore-cursor@1.0.1
+177 silly diffTrees remove cli-cursor@1.0.2
+178 silly diffTrees remove cli-width@1.1.0
+179 silly diffTrees remove figures@1.4.0
+180 silly diffTrees remove lodash@3.10.1
+181 silly diffTrees remove number-is-nan@1.0.0
+182 silly diffTrees remove code-point-at@1.0.0
+183 silly diffTrees remove number-is-nan@1.0.0
+184 silly diffTrees remove is-fullwidth-code-point@1.0.0
+185 silly diffTrees remove mute-stream@0.0.5
+186 silly diffTrees remove readline2@1.0.1
+187 silly diffTrees remove wrappy@1.0.1
+188 silly diffTrees remove once@1.3.3
+189 silly diffTrees remove run-async@0.1.0
+190 silly diffTrees remove rx-lite@3.1.2
+191 silly diffTrees remove strip-ansi@3.0.0
+192 silly diffTrees remove through@2.3.8
+193 silly diffTrees remove inquirer@0.10.0
+194 silly diffTrees remove async@1.5.0
+195 silly diffTrees remove graceful-fs@4.1.2
+196 silly diffTrees remove os-tmpdir@1.0.1
+197 silly diffTrees remove os-homedir@1.0.1
+198 silly diffTrees remove osenv@0.1.3
+199 silly diffTrees remove uuid@2.0.1
+200 silly diffTrees remove imurmurhash@0.1.4
+201 silly diffTrees remove slide@1.1.6
+202 silly diffTrees remove write-file-atomic@1.1.4
+203 silly diffTrees remove os-homedir@1.0.1
+204 silly diffTrees remove xdg-basedir@2.0.0
+205 silly diffTrees remove lodash._getnative@3.9.1
+206 silly diffTrees remove lodash.debounce@3.1.1
+207 silly diffTrees remove object-assign@4.0.1
+208 silly diffTrees remove minimist@1.2.0
+209 silly diffTrees remove osx-release@1.1.0
+210 silly diffTrees remove semver@5.1.0
+211 silly diffTrees remove win-release@1.1.1
+212 silly diffTrees remove os-name@1.0.3
+213 silly diffTrees remove tough-cookie@2.2.1
+214 silly diffTrees remove is-root@1.0.0
+215 silly diffTrees remove junk@1.0.2
+216 silly diffTrees remove lockfile@1.0.1
+217 silly diffTrees remove lru-cache@2.7.3
+218 silly diffTrees remove md5-o-matic@0.1.1
+219 silly diffTrees remove md5-hex@1.1.0
+220 silly diffTrees remove minimist@0.0.8
+221 silly diffTrees remove mkdirp@0.5.0
+222 silly diffTrees remove configstore@1.4.0
+223 silly diffTrees remove mout@0.11.1
+224 silly diffTrees remove bower-config@1.3.0
+225 silly diffTrees remove nopt@3.0.6
+226 silly diffTrees remove opn@1.0.2
+227 silly diffTrees remove q@0.9.7
+228 silly diffTrees remove p-throttler@0.1.1
+229 silly diffTrees remove mute-stream@0.0.5
+230 silly diffTrees remove read@1.0.7
+231 silly diffTrees remove promptly@0.2.0
+232 silly diffTrees remove q@1.4.1
+233 silly diffTrees remove decompress-zip@0.1.0
+234 silly diffTrees remove throttleit@0.0.2
+235 silly diffTrees remove request-progress@0.3.1
+236 silly diffTrees remove aws-sign2@0.5.0
+237 silly diffTrees remove core-util-is@1.0.2
+238 silly diffTrees remove inherits@2.0.1
+239 silly diffTrees remove isarray@0.0.1
+240 silly diffTrees remove string_decoder@0.10.31
+241 silly diffTrees remove readable-stream@1.0.33
+242 silly diffTrees remove bl@0.9.4
+243 silly diffTrees remove caseless@0.9.0
+244 silly diffTrees remove delayed-stream@0.0.5
+245 silly diffTrees remove combined-stream@0.0.7
+246 silly diffTrees remove forever-agent@0.5.2
+247 silly diffTrees remove async@0.9.2
+248 silly diffTrees remove hoek@2.16.3
+249 silly diffTrees remove boom@2.10.1
+250 silly diffTrees remove cryptiles@2.0.5
+251 silly diffTrees remove sntp@1.0.9
+252 silly diffTrees remove hawk@2.3.1
+253 silly diffTrees remove asn1@0.1.11
+254 silly diffTrees remove assert-plus@0.1.5
+255 silly diffTrees remove ctype@0.5.3
+256 silly diffTrees remove http-signature@0.10.1
+257 silly diffTrees remove isstream@0.1.2
+258 silly diffTrees remove json-stringify-safe@5.0.1
+259 silly diffTrees remove mime-db@1.12.0
+260 silly diffTrees remove mime-types@2.0.14
+261 silly diffTrees remove form-data@0.2.0
+262 silly diffTrees remove node-uuid@1.4.7
+263 silly diffTrees remove oauth-sign@0.6.0
+264 silly diffTrees remove qs@2.3.3
+265 silly diffTrees remove stringstream@0.0.5
+266 silly diffTrees remove tough-cookie@2.2.1
+267 silly diffTrees remove tunnel-agent@0.4.2
+268 silly diffTrees remove request@2.53.0
+269 silly diffTrees remove insight@0.7.0
+270 silly diffTrees remove retry@0.6.1
+271 silly diffTrees remove request-replay@0.2.0
+272 silly diffTrees remove wrappy@1.0.1
+273 silly diffTrees remove inherits@2.0.1
+274 silly diffTrees remove balanced-match@0.3.0
+275 silly diffTrees remove concat-map@0.0.1
+276 silly diffTrees remove brace-expansion@1.1.2
+277 silly diffTrees remove minimatch@3.0.0
+278 silly diffTrees remove wrappy@1.0.1
+279 silly diffTrees remove once@1.3.3
+280 silly diffTrees remove inflight@1.0.4
+281 silly diffTrees remove path-is-absolute@1.0.0
+282 silly diffTrees remove glob@5.0.15
+283 silly diffTrees remove rimraf@2.4.4
+284 silly diffTrees remove fstream@1.0.8
+285 silly diffTrees remove fstream-ignore@1.0.3
+286 silly diffTrees remove bower-registry-client@1.0.0
+287 silly diffTrees remove semver@2.3.2
+288 silly diffTrees remove semver-utils@1.1.1
+289 silly diffTrees remove array-filter@0.0.1
+290 silly diffTrees remove array-map@0.0.0
+291 silly diffTrees remove array-reduce@0.0.0
+292 silly diffTrees remove jsonify@0.0.0
+293 silly diffTrees remove shell-quote@1.4.3
+294 silly diffTrees remove stringify-object@1.0.1
+295 silly diffTrees remove wrappy@1.0.1
+296 silly diffTrees remove once@1.3.3
+297 silly diffTrees remove end-of-stream@1.1.0
+298 silly diffTrees remove pump@1.0.1
+299 silly diffTrees remove wrappy@1.0.1
+300 silly diffTrees remove once@1.3.3
+301 silly diffTrees remove end-of-stream@1.1.0
+302 silly diffTrees remove core-util-is@1.0.2
+303 silly diffTrees remove inherits@2.0.1
+304 silly diffTrees remove isarray@0.0.1
+305 silly diffTrees remove process-nextick-args@1.0.6
+306 silly diffTrees remove string_decoder@0.10.31
+307 silly diffTrees remove util-deprecate@1.0.2
+308 silly diffTrees remove readable-stream@2.0.4
+309 silly diffTrees remove bl@1.0.0
+310 silly diffTrees remove xtend@4.0.1
+311 silly diffTrees remove tar-stream@1.3.1
+312 silly diffTrees remove tar-fs@1.8.1
+313 silly diffTrees remove tmp@0.0.24
+314 silly diffTrees remove graceful-fs@4.1.2
+315 silly diffTrees remove object-assign@4.0.1
+316 silly diffTrees remove os-tmpdir@1.0.1
+317 silly diffTrees remove os-homedir@1.0.1
+318 silly diffTrees remove osenv@0.1.3
+319 silly diffTrees remove uuid@2.0.1
+320 silly diffTrees remove imurmurhash@0.1.4
+321 silly diffTrees remove slide@1.1.6
+322 silly diffTrees remove write-file-atomic@1.1.4
+323 silly diffTrees remove os-homedir@1.0.1
+324 silly diffTrees remove xdg-basedir@2.0.0
+325 silly diffTrees remove configstore@1.4.0
+326 silly diffTrees remove is-npm@1.0.0
+327 silly diffTrees remove capture-stack-trace@1.0.0
+328 silly diffTrees remove inherits@2.0.1
+329 silly diffTrees remove create-error-class@2.0.1
+330 silly diffTrees remove wrappy@1.0.1
+331 silly diffTrees remove once@1.3.3
+332 silly diffTrees remove end-of-stream@1.0.0
+333 silly diffTrees remove core-util-is@1.0.2
+334 silly diffTrees remove inherits@2.0.1
+335 silly diffTrees remove isarray@0.0.1
+336 silly diffTrees remove process-nextick-args@1.0.6
+337 silly diffTrees remove string_decoder@0.10.31
+338 silly diffTrees remove util-deprecate@1.0.2
+339 silly diffTrees remove readable-stream@2.0.4
+340 silly diffTrees remove duplexify@3.4.2
+341 silly diffTrees remove is-plain-obj@1.1.0
+342 silly diffTrees remove is-redirect@1.0.0
+343 silly diffTrees remove is-stream@1.0.1
+344 silly diffTrees remove lowercase-keys@1.0.0
+345 silly diffTrees remove node-status-codes@1.0.0
+346 silly diffTrees remove object-assign@4.0.1
+347 silly diffTrees remove is-arrayish@0.2.1
+348 silly diffTrees remove error-ex@1.3.0
+349 silly diffTrees remove parse-json@2.2.0
+350 silly diffTrees remove pinkie@2.0.1
+351 silly diffTrees remove pinkie-promise@2.0.0
+352 silly diffTrees remove pinkie@1.0.0
+353 silly diffTrees remove pinkie-promise@1.0.0
+354 silly diffTrees remove core-util-is@1.0.2
+355 silly diffTrees remove inherits@2.0.1
+356 silly diffTrees remove isarray@0.0.1
+357 silly diffTrees remove process-nextick-args@1.0.6
+358 silly diffTrees remove string_decoder@0.10.31
+359 silly diffTrees remove util-deprecate@1.0.2
+360 silly diffTrees remove readable-stream@2.0.4
+361 silly diffTrees remove read-all-stream@3.0.1
+362 silly diffTrees remove timed-out@2.0.0
+363 silly diffTrees remove unzip-response@1.0.0
+364 silly diffTrees remove prepend-http@1.0.3
+365 silly diffTrees remove url-parse-lax@1.0.0
+366 silly diffTrees remove got@5.2.0
+367 silly diffTrees remove deep-extend@0.4.0
+368 silly diffTrees remove ini@1.3.4
+369 silly diffTrees remove minimist@1.2.0
+370 silly diffTrees remove strip-json-comments@1.0.4
+371 silly diffTrees remove rc@1.1.5
+372 silly diffTrees remove registry-url@3.0.3
+373 silly diffTrees remove semver@5.1.0
+374 silly diffTrees remove package-json@2.3.0
+375 silly diffTrees remove latest-version@2.0.0
+376 silly diffTrees remove number-is-nan@1.0.0
+377 silly diffTrees remove is-finite@1.0.1
+378 silly diffTrees remove repeating@2.0.0
+379 silly diffTrees remove semver@5.1.0
+380 silly diffTrees remove semver-diff@2.1.0
+381 silly diffTrees remove ansi-regex@2.0.0
+382 silly diffTrees remove strip-ansi@3.0.0
+383 silly diffTrees remove string-length@1.0.1
+384 silly diffTrees remove update-notifier@0.6.0
+385 silly diffTrees remove user-home@1.1.1
+386 silly diffTrees remove xdg-basedir@1.0.1
+387 silly diffTrees remove configstore@0.3.2
+388 silly diffTrees remove is-relative@0.1.3
+389 silly diffTrees remove is-absolute@0.1.7
+390 silly diffTrees remove which@1.2.0
+391 silly diffTrees update bower@1.7.7
+392 silly decomposeActions action count 322
+393 silly decomposeActions remove abbrev@1.0.7
+394 silly decomposeActions remove archy@1.0.0
+395 silly decomposeActions remove graceful-fs@4.1.2
+396 silly decomposeActions remove minimist@0.0.10
+397 silly decomposeActions remove wordwrap@0.0.3
+398 silly decomposeActions remove optimist@0.6.1
+399 silly decomposeActions remove os-homedir@1.0.1
+400 silly decomposeActions remove os-tmpdir@1.0.1
+401 silly decomposeActions remove osenv@0.1.3
+402 silly decomposeActions remove os-homedir@1.0.1
+403 silly decomposeActions remove untildify@2.1.0
+404 silly decomposeActions remove bower-endpoint-parser@0.2.2
+405 silly decomposeActions remove deep-extend@0.2.11
+406 silly decomposeActions remove graceful-fs@2.0.3
+407 silly decomposeActions remove intersect@0.0.3
+408 silly decomposeActions remove bower-json@0.4.0
+409 silly decomposeActions remove bower-logger@0.2.2
+410 silly decomposeActions remove async@0.2.10
+411 silly decomposeActions remove graceful-fs@4.1.2
+412 silly decomposeActions remove mkdirp@0.3.5
+413 silly decomposeActions remove ansicolors@0.2.1
+414 silly decomposeActions remove esprima@1.0.4
+415 silly decomposeActions remove redeyed@0.4.4
+416 silly decomposeActions remove cardinal@0.4.4
+417 silly decomposeActions remove ansi-styles@2.1.0
+418 silly decomposeActions remove escape-string-regexp@1.0.3
+419 silly decomposeActions remove ansi-regex@2.0.0
+420 silly decomposeActions remove has-ansi@2.0.0
+421 silly decomposeActions remove ansi-regex@2.0.0
+422 silly decomposeActions remove strip-ansi@3.0.0
+423 silly decomposeActions remove supports-color@2.0.0
+424 silly decomposeActions remove chalk@1.1.1
+425 silly decomposeActions remove chmodr@1.0.2
+426 silly decomposeActions remove lodash@3.10.1
+427 silly decomposeActions remove sprintf-js@1.0.3
+428 silly decomposeActions remove argparse@1.0.3
+429 silly decomposeActions remove esprima@2.7.1
+430 silly decomposeActions remove inherit@2.2.2
+431 silly decomposeActions remove js-yaml@3.4.6
+432 silly decomposeActions remove object-assign@2.1.1
+433 silly decomposeActions remove os-homedir@1.0.1
+434 silly decomposeActions remove os-tmpdir@1.0.1
+435 silly decomposeActions remove osenv@0.1.3
+436 silly decomposeActions remove uuid@2.0.1
+437 silly decomposeActions remove buffers@0.1.1
+438 silly decomposeActions remove traverse@0.3.9
+439 silly decomposeActions remove chainsaw@0.1.0
+440 silly decomposeActions remove binary@0.3.0
+441 silly decomposeActions remove mkpath@0.1.0
+442 silly decomposeActions remove core-util-is@1.0.2
+443 silly decomposeActions remove inherits@2.0.1
+444 silly decomposeActions remove isarray@0.0.1
+445 silly decomposeActions remove string_decoder@0.10.31
+446 silly decomposeActions remove readable-stream@1.1.13
+447 silly decomposeActions remove nopt@1.0.10
+448 silly decomposeActions remove touch@0.0.3
+449 silly decomposeActions remove destroy@1.0.3
+450 silly decomposeActions remove graceful-fs@4.1.2
+451 silly decomposeActions remove iferr@0.1.5
+452 silly decomposeActions remove imurmurhash@0.1.4
+453 silly decomposeActions remove core-util-is@1.0.2
+454 silly decomposeActions remove inherits@2.0.1
+455 silly decomposeActions remove isarray@0.0.1
+456 silly decomposeActions remove process-nextick-args@1.0.6
+457 silly decomposeActions remove string_decoder@0.10.31
+458 silly decomposeActions remove util-deprecate@1.0.2
+459 silly decomposeActions remove readable-stream@2.0.4
+460 silly decomposeActions remove fs-write-stream-atomic@1.0.7
+461 silly decomposeActions remove inherits@2.0.1
+462 silly decomposeActions remove balanced-match@0.3.0
+463 silly decomposeActions remove concat-map@0.0.1
+464 silly decomposeActions remove brace-expansion@1.1.2
+465 silly decomposeActions remove minimatch@3.0.0
+466 silly decomposeActions remove graceful-fs@4.1.2
+467 silly decomposeActions remove inherits@2.0.1
+468 silly decomposeActions remove mime@1.3.4
+469 silly decomposeActions remove github@0.2.4
+470 silly decomposeActions remove wrappy@1.0.1
+471 silly decomposeActions remove inherits@2.0.1
+472 silly decomposeActions remove balanced-match@0.3.0
+473 silly decomposeActions remove concat-map@0.0.1
+474 silly decomposeActions remove brace-expansion@1.1.2
+475 silly decomposeActions remove minimatch@2.0.10
+476 silly decomposeActions remove wrappy@1.0.1
+477 silly decomposeActions remove once@1.3.3
+478 silly decomposeActions remove inflight@1.0.4
+479 silly decomposeActions remove glob@4.5.3
+480 silly decomposeActions remove graceful-fs@3.0.8
+481 silly decomposeActions remove wordwrap@0.0.3
+482 silly decomposeActions remove optimist@0.3.7
+483 silly decomposeActions remove async@0.2.10
+484 silly decomposeActions remove amdefine@1.0.0
+485 silly decomposeActions remove source-map@0.1.43
+486 silly decomposeActions remove uglify-js@2.3.6
+487 silly decomposeActions remove handlebars@2.0.0
+488 silly decomposeActions remove ansi-escapes@1.1.0
+489 silly decomposeActions remove ansi-regex@2.0.0
+490 silly decomposeActions remove exit-hook@1.1.1
+491 silly decomposeActions remove onetime@1.0.0
+492 silly decomposeActions remove restore-cursor@1.0.1
+493 silly decomposeActions remove cli-cursor@1.0.2
+494 silly decomposeActions remove cli-width@1.1.0
+495 silly decomposeActions remove figures@1.4.0
+496 silly decomposeActions remove lodash@3.10.1
+497 silly decomposeActions remove number-is-nan@1.0.0
+498 silly decomposeActions remove code-point-at@1.0.0
+499 silly decomposeActions remove number-is-nan@1.0.0
+500 silly decomposeActions remove is-fullwidth-code-point@1.0.0
+501 silly decomposeActions remove mute-stream@0.0.5
+502 silly decomposeActions remove readline2@1.0.1
+503 silly decomposeActions remove wrappy@1.0.1
+504 silly decomposeActions remove once@1.3.3
+505 silly decomposeActions remove run-async@0.1.0
+506 silly decomposeActions remove rx-lite@3.1.2
+507 silly decomposeActions remove strip-ansi@3.0.0
+508 silly decomposeActions remove through@2.3.8
+509 silly decomposeActions remove inquirer@0.10.0
+510 silly decomposeActions remove async@1.5.0
+511 silly decomposeActions remove graceful-fs@4.1.2
+512 silly decomposeActions remove os-tmpdir@1.0.1
+513 silly decomposeActions remove os-homedir@1.0.1
+514 silly decomposeActions remove osenv@0.1.3
+515 silly decomposeActions remove uuid@2.0.1
+516 silly decomposeActions remove imurmurhash@0.1.4
+517 silly decomposeActions remove slide@1.1.6
+518 silly decomposeActions remove write-file-atomic@1.1.4
+519 silly decomposeActions remove os-homedir@1.0.1
+520 silly decomposeActions remove xdg-basedir@2.0.0
+521 silly decomposeActions remove lodash._getnative@3.9.1
+522 silly decomposeActions remove lodash.debounce@3.1.1
+523 silly decomposeActions remove object-assign@4.0.1
+524 silly decomposeActions remove minimist@1.2.0
+525 silly decomposeActions remove osx-release@1.1.0
+526 silly decomposeActions remove semver@5.1.0
+527 silly decomposeActions remove win-release@1.1.1
+528 silly decomposeActions remove os-name@1.0.3
+529 silly decomposeActions remove tough-cookie@2.2.1
+530 silly decomposeActions remove is-root@1.0.0
+531 silly decomposeActions remove junk@1.0.2
+532 silly decomposeActions remove lockfile@1.0.1
+533 silly decomposeActions remove lru-cache@2.7.3
+534 silly decomposeActions remove md5-o-matic@0.1.1
+535 silly decomposeActions remove md5-hex@1.1.0
+536 silly decomposeActions remove minimist@0.0.8
+537 silly decomposeActions remove mkdirp@0.5.0
+538 silly decomposeActions remove configstore@1.4.0
+539 silly decomposeActions remove mout@0.11.1
+540 silly decomposeActions remove bower-config@1.3.0
+541 silly decomposeActions remove nopt@3.0.6
+542 silly decomposeActions remove opn@1.0.2
+543 silly decomposeActions remove q@0.9.7
+544 silly decomposeActions remove p-throttler@0.1.1
+545 silly decomposeActions remove mute-stream@0.0.5
+546 silly decomposeActions remove read@1.0.7
+547 silly decomposeActions remove promptly@0.2.0
+548 silly decomposeActions remove q@1.4.1
+549 silly decomposeActions remove decompress-zip@0.1.0
+550 silly decomposeActions remove throttleit@0.0.2
+551 silly decomposeActions remove request-progress@0.3.1
+552 silly decomposeActions remove aws-sign2@0.5.0
+553 silly decomposeActions remove core-util-is@1.0.2
+554 silly decomposeActions remove inherits@2.0.1
+555 silly decomposeActions remove isarray@0.0.1
+556 silly decomposeActions remove string_decoder@0.10.31
+557 silly decomposeActions remove readable-stream@1.0.33
+558 silly decomposeActions remove bl@0.9.4
+559 silly decomposeActions remove caseless@0.9.0
+560 silly decomposeActions remove delayed-stream@0.0.5
+561 silly decomposeActions remove combined-stream@0.0.7
+562 silly decomposeActions remove forever-agent@0.5.2
+563 silly decomposeActions remove async@0.9.2
+564 silly decomposeActions remove hoek@2.16.3
+565 silly decomposeActions remove boom@2.10.1
+566 silly decomposeActions remove cryptiles@2.0.5
+567 silly decomposeActions remove sntp@1.0.9
+568 silly decomposeActions remove hawk@2.3.1
+569 silly decomposeActions remove asn1@0.1.11
+570 silly decomposeActions remove assert-plus@0.1.5
+571 silly decomposeActions remove ctype@0.5.3
+572 silly decomposeActions remove http-signature@0.10.1
+573 silly decomposeActions remove isstream@0.1.2
+574 silly decomposeActions remove json-stringify-safe@5.0.1
+575 silly decomposeActions remove mime-db@1.12.0
+576 silly decomposeActions remove mime-types@2.0.14
+577 silly decomposeActions remove form-data@0.2.0
+578 silly decomposeActions remove node-uuid@1.4.7
+579 silly decomposeActions remove oauth-sign@0.6.0
+580 silly decomposeActions remove qs@2.3.3
+581 silly decomposeActions remove stringstream@0.0.5
+582 silly decomposeActions remove tough-cookie@2.2.1
+583 silly decomposeActions remove tunnel-agent@0.4.2
+584 silly decomposeActions remove request@2.53.0
+585 silly decomposeActions remove insight@0.7.0
+586 silly decomposeActions remove retry@0.6.1
+587 silly decomposeActions remove request-replay@0.2.0
+588 silly decomposeActions remove wrappy@1.0.1
+589 silly decomposeActions remove inherits@2.0.1
+590 silly decomposeActions remove balanced-match@0.3.0
+591 silly decomposeActions remove concat-map@0.0.1
+592 silly decomposeActions remove brace-expansion@1.1.2
+593 silly decomposeActions remove minimatch@3.0.0
+594 silly decomposeActions remove wrappy@1.0.1
+595 silly decomposeActions remove once@1.3.3
+596 silly decomposeActions remove inflight@1.0.4
+597 silly decomposeActions remove path-is-absolute@1.0.0
+598 silly decomposeActions remove glob@5.0.15
+599 silly decomposeActions remove rimraf@2.4.4
+600 silly decomposeActions remove fstream@1.0.8
+601 silly decomposeActions remove fstream-ignore@1.0.3
+602 silly decomposeActions remove bower-registry-client@1.0.0
+603 silly decomposeActions remove semver@2.3.2
+604 silly decomposeActions remove semver-utils@1.1.1
+605 silly decomposeActions remove array-filter@0.0.1
+606 silly decomposeActions remove array-map@0.0.0
+607 silly decomposeActions remove array-reduce@0.0.0
+608 silly decomposeActions remove jsonify@0.0.0
+609 silly decomposeActions remove shell-quote@1.4.3
+610 silly decomposeActions remove stringify-object@1.0.1
+611 silly decomposeActions remove wrappy@1.0.1
+612 silly decomposeActions remove once@1.3.3
+613 silly decomposeActions remove end-of-stream@1.1.0
+614 silly decomposeActions remove pump@1.0.1
+615 silly decomposeActions remove wrappy@1.0.1
+616 silly decomposeActions remove once@1.3.3
+617 silly decomposeActions remove end-of-stream@1.1.0
+618 silly decomposeActions remove core-util-is@1.0.2
+619 silly decomposeActions remove inherits@2.0.1
+620 silly decomposeActions remove isarray@0.0.1
+621 silly decomposeActions remove process-nextick-args@1.0.6
+622 silly decomposeActions remove string_decoder@0.10.31
+623 silly decomposeActions remove util-deprecate@1.0.2
+624 silly decomposeActions remove readable-stream@2.0.4
+625 silly decomposeActions remove bl@1.0.0
+626 silly decomposeActions remove xtend@4.0.1
+627 silly decomposeActions remove tar-stream@1.3.1
+628 silly decomposeActions remove tar-fs@1.8.1
+629 silly decomposeActions remove tmp@0.0.24
+630 silly decomposeActions remove graceful-fs@4.1.2
+631 silly decomposeActions remove object-assign@4.0.1
+632 silly decomposeActions remove os-tmpdir@1.0.1
+633 silly decomposeActions remove os-homedir@1.0.1
+634 silly decomposeActions remove osenv@0.1.3
+635 silly decomposeActions remove uuid@2.0.1
+636 silly decomposeActions remove imurmurhash@0.1.4
+637 silly decomposeActions remove slide@1.1.6
+638 silly decomposeActions remove write-file-atomic@1.1.4
+639 silly decomposeActions remove os-homedir@1.0.1
+640 silly decomposeActions remove xdg-basedir@2.0.0
+641 silly decomposeActions remove configstore@1.4.0
+642 silly decomposeActions remove is-npm@1.0.0
+643 silly decomposeActions remove capture-stack-trace@1.0.0
+644 silly decomposeActions remove inherits@2.0.1
+645 silly decomposeActions remove create-error-class@2.0.1
+646 silly decomposeActions remove wrappy@1.0.1
+647 silly decomposeActions remove once@1.3.3
+648 silly decomposeActions remove end-of-stream@1.0.0
+649 silly decomposeActions remove core-util-is@1.0.2
+650 silly decomposeActions remove inherits@2.0.1
+651 silly decomposeActions remove isarray@0.0.1
+652 silly decomposeActions remove process-nextick-args@1.0.6
+653 silly decomposeActions remove string_decoder@0.10.31
+654 silly decomposeActions remove util-deprecate@1.0.2
+655 silly decomposeActions remove readable-stream@2.0.4
+656 silly decomposeActions remove duplexify@3.4.2
+657 silly decomposeActions remove is-plain-obj@1.1.0
+658 silly decomposeActions remove is-redirect@1.0.0
+659 silly decomposeActions remove is-stream@1.0.1
+660 silly decomposeActions remove lowercase-keys@1.0.0
+661 silly decomposeActions remove node-status-codes@1.0.0
+662 silly decomposeActions remove object-assign@4.0.1
+663 silly decomposeActions remove is-arrayish@0.2.1
+664 silly decomposeActions remove error-ex@1.3.0
+665 silly decomposeActions remove parse-json@2.2.0
+666 silly decomposeActions remove pinkie@2.0.1
+667 silly decomposeActions remove pinkie-promise@2.0.0
+668 silly decomposeActions remove pinkie@1.0.0
+669 silly decomposeActions remove pinkie-promise@1.0.0
+670 silly decomposeActions remove core-util-is@1.0.2
+671 silly decomposeActions remove inherits@2.0.1
+672 silly decomposeActions remove isarray@0.0.1
+673 silly decomposeActions remove process-nextick-args@1.0.6
+674 silly decomposeActions remove string_decoder@0.10.31
+675 silly decomposeActions remove util-deprecate@1.0.2
+676 silly decomposeActions remove readable-stream@2.0.4
+677 silly decomposeActions remove read-all-stream@3.0.1
+678 silly decomposeActions remove timed-out@2.0.0
+679 silly decomposeActions remove unzip-response@1.0.0
+680 silly decomposeActions remove prepend-http@1.0.3
+681 silly decomposeActions remove url-parse-lax@1.0.0
+682 silly decomposeActions remove got@5.2.0
+683 silly decomposeActions remove deep-extend@0.4.0
+684 silly decomposeActions remove ini@1.3.4
+685 silly decomposeActions remove minimist@1.2.0
+686 silly decomposeActions remove strip-json-comments@1.0.4
+687 silly decomposeActions remove rc@1.1.5
+688 silly decomposeActions remove registry-url@3.0.3
+689 silly decomposeActions remove semver@5.1.0
+690 silly decomposeActions remove package-json@2.3.0
+691 silly decomposeActions remove latest-version@2.0.0
+692 silly decomposeActions remove number-is-nan@1.0.0
+693 silly decomposeActions remove is-finite@1.0.1
+694 silly decomposeActions remove repeating@2.0.0
+695 silly decomposeActions remove semver@5.1.0
+696 silly decomposeActions remove semver-diff@2.1.0
+697 silly decomposeActions remove ansi-regex@2.0.0
+698 silly decomposeActions remove strip-ansi@3.0.0
+699 silly decomposeActions remove string-length@1.0.1
+700 silly decomposeActions remove update-notifier@0.6.0
+701 silly decomposeActions remove user-home@1.1.1
+702 silly decomposeActions remove xdg-basedir@1.0.1
+703 silly decomposeActions remove configstore@0.3.2
+704 silly decomposeActions remove is-relative@0.1.3
+705 silly decomposeActions remove is-absolute@0.1.7
+706 silly decomposeActions remove which@1.2.0
+707 silly decomposeActions fetch bower@1.7.7
+708 silly decomposeActions extract bower@1.7.7
+709 silly decomposeActions preinstall bower@1.7.7
+710 silly decomposeActions build bower@1.7.7
+711 silly decomposeActions install bower@1.7.7
+712 silly decomposeActions postinstall bower@1.7.7
+713 silly decomposeActions test bower@1.7.7
+714 silly decomposeActions finalize bower@1.7.7
+715 silly executeActions Starting
+716 silly install executeActions
+717 silly doSerial global-install 0
+718 silly doParallel fetch 1
+719 verbose lock using C:\Users\126163_Admin\AppData\Roaming\npm-cache\_locks\staging-dfd8fbf9c1feea0f.lock for C:\Program Files\nodejs\node_modules\.staging
+720 verbose unlock done using C:\Users\126163_Admin\AppData\Roaming\npm-cache\_locks\staging-dfd8fbf9c1feea0f.lock for C:\Program Files\nodejs\node_modules\.staging
+721 silly rollbackFailedOptional Starting
+722 silly rollbackFailedOptional Finishing
+723 silly runTopLevelLifecycles Starting
+724 silly runTopLevelLifecycles Finishing
+725 silly install printInstalled
+726 verbose stack Error: EPERM: operation not permitted, mkdir 'C:\Program Files\nodejs\node_modules\.staging'
+726 verbose stack     at Error (native)
+727 verbose cwd C:\xampp\htdocs\tankerapp
+728 error Windows_NT 6.1.7601
+729 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "bower"
+730 error node v5.0.0
+731 error npm  v3.3.11
+732 error path C:\Program Files\nodejs\node_modules\.staging
+733 error code EPERM
+734 error errno -4048
+735 error syscall mkdir
+736 error Error: EPERM: operation not permitted, mkdir 'C:\Program Files\nodejs\node_modules\.staging'
+736 error     at Error (native)
+736 error  { [Error: EPERM: operation not permitted, mkdir 'C:\Program Files\nodejs\node_modules\.staging']
+736 error   errno: -4048,
+736 error   code: 'EPERM',
+736 error   syscall: 'mkdir',
+736 error   path: 'C:\\Program Files\\nodejs\\node_modules\\.staging' }
+737 error Please try running this command again as root/Administrator.
+738 verbose exit [ -4048, true ]

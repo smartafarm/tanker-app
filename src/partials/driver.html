@@ -1,0 +1,45 @@
+<h1>Driver</h1>
+<uib-accordion close-others="oneAtATime" >
+    <uib-accordion-group heading="+ Add Record" is-open="panelstatus" >
+        <form class="form-horizontal" name="newentry" id="newentry" style="font-size:85%" novalidate>        
+
+            <div class="col-md-12">           
+                <md-input-container class="col-md-3">
+                    <label>Device ID</label>
+                    <input type="text" required name="did" ng-model="formdata.did">              
+                </md-input-container>
+
+                <md-input-container class="col-md-3">
+                    <label>Driver ID</label>
+                    <input type="text" required name="tankid" ng-model="formdata.driverid">              
+                </md-input-container>
+
+              	<md-input-container class="col-md-3">
+                    <label>Driver Name</label>
+                    <input type="text" required name="truckid" ng-model="formdata.drivername">              
+                </md-input-container>
+                   
+            </div>
+           <div class="row">
+            <div class="form-group col-md-12">
+                 <div  class="col-md-3">
+                   <button type="submit" class="btn btn-success" ng-click="ok()" ng-disabled = "newentry.$invalid"> + Add Record</button>
+                 </div>          
+               </div>
+           </div>
+  </form>
+    </uib-accordion-group>
+</uib-accordion>
+
+<div class="col-md-12 clearfix ">
+
+<div class="row" style="background-color:#eee;margin-top:10px">         
+     <div  
+     ui-grid="gridOptions" 
+     ui-grid-selection 
+     ui-grid-resize-columns 
+     ui-grid-pagination
+     ui-grid-edit
+     class="myGrid" style="margin-top: 20px;"></div>
+ </div>
+</div> 

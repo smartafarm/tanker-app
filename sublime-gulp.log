@@ -1,0 +1,144 @@
+Remember that you can report errors and get help in https://github.com/NicoSantangelo/sublime-gulp
+
+02-18-2016 15:25:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:16
+		'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-18-2016 15:25:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:16
+		'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-18-2016 15:25:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:16
+		'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-18-2016 15:28:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:16
+		'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-23-2016 14:57:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:30
+		'bower_components/ng-file-upload/ng-file-upload.min.js'
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-23-2016 14:58:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:30
+		'bower_components/ng-file-upload/ng-file-upload.min.js'
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-23-2016 14:58:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:30
+		'bower_components/ng-file-upload/ng-file-upload.min.js'
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)
+
+
+02-23-2016 14:58:
+C:\xampp\htdocs\tankerapp\.sublime-gulp-tmp.js:30
+		'bower_components/ng-file-upload/ng-file-upload.min.js'
+		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SyntaxError: Unexpected string
+    at exports.runInThisContext (vm.js:53:16)
+    at Module._compile (module.js:404:25)
+    at Object.Module._extensions..js (module.js:432:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:311:12)
+    at Module.require (module.js:366:17)
+    at require (module.js:385:17)
+    at requireGulp (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:28:16)
+    at Object.<anonymous> (C:\Users\126163_Admin\AppData\Roaming\Sublime Text 3\Packages\Gulp\write_tasks_to_cache.js:80:12)
+    at Module._compile (module.js:425:26)

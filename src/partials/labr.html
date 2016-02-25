@@ -1,0 +1,11 @@
+<h1 class="page-heading">Lab Results</h1>
+<div class="well">  
+  <p> Upload Files </p>
+  <input type="file" name="file"  ngf-select="onFileSelect($file)"/>
+</div>
+<h1>Available Reports</h1>
+<div ng-repeat = "report in downloads | orderBy : 'name' :true " class="well">
+	<p>{{report.name}}</p>
+	<span><a href="{{path + report.path}}" download="{{report.name}}" >Download</a></span>
+</div>
+

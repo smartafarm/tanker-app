@@ -1,0 +1,14 @@
+<h1>Raw Data</h1>
+<div ng-controller="appCtrl">
+	<label>Push data</label>
+	<input ng-model="pushtext">
+	<button ng-click="postData()">post</button>
+				
+	<p ng-repeat = "line in data track by $index">
+
+	{{line}}
+	<br>
+
+	</p>
+
+</div>
