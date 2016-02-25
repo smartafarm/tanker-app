@@ -70,12 +70,12 @@ $scope.ok = function(){
    paginationPageSize: 10,
    columnDefs:[
    { field: 'did' ,displayName:'Device' ,enableCellEdit : false},
-   { field: 'dt',displayName:'dt' ,enableCellEdit : false,width : 160 ,sort: {
+   { field: 'dt',displayName:'Date' ,enableCellEdit : false,width : 160 ,sort: {
           direction: uiGridConstants.DESC,
           priority: 0,
         }}	,
-   { field: 'lat',displayName:'lat' }	,
-   { field: 'long',displayName:'long' }	
+   { field: 'lat',displayName:'Lat' }	,
+   { field: 'long',displayName:'Long' }	
     
    ]
   

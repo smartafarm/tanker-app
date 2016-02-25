@@ -86,18 +86,18 @@ $scope.ok = function(){
    paginationPageSize: 10,
    columnDefs:[
    { field: 'did' ,displayName:'Device' ,enableCellEdit : false},
-   { field: 'dt',displayName:'dt' ,enableCellEdit : false,width : 160 ,sort: {
+   { field: 'dt',displayName:'Date' ,enableCellEdit : false,width : 160 ,sort: {
           direction: uiGridConstants.DESC,
           priority: 0,
         }}	,
-   { field: 'lat',displayName:'lat' }	,
-   { field: 'long',displayName:'long' }	,
-   { field: 'route',displayName:'route' }	,
-   { field: 'supplier',displayName:'supp' }	,
-   { field: 'tavg',displayName:'tavg' }	,
-   { field: 'tmin',displayName:'tmin' }	,
-   { field: 'tmin',displayName:'tmin' }	,
-   { field: 'vol',displayName:'vol' }	   
+   { field: 'lat',displayName:'Lat' }	,
+   { field: 'long',displayName:'Long' }	,
+   { field: 'route',displayName:'Route' }	,
+   { field: 'supplier',displayName:'Supplier' }	,
+   { field: 'tavg',displayName:'Temp Avg' }	,
+   { field: 'tmin',displayName:'Temp Min' }	,
+   { field: 'tmax',displayName:'Temp Max' }	,
+   { field: 'vol',displayName:'Volume' }	   
    ]
   
    
