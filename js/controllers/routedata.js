@@ -1,59 +1,66 @@
 var tankerapp = angular.module('tankerapp');
 tankerapp
-.controller('tlocCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
+.controller('routedataCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
 
 if(!$rootScope.alldevices){
  $rootScope.device.then(function(devices){
    	$rootScope.alldevices = devices;
    })	
-}	
+}
 
-dfo.getMethod ('tloc/fetchall').then(function(response){
+dfo.getMethod ('route/fetchalldata').then(function(response){
    var data = response;       
+
    $scope.myData = [];        
-   data.forEach(function(value,key){  		
-	value.tankid ="Not found"
-	value.truckid = "Not Found"
+   
+   data.forEach(function(value,key){  	
+	   value.tankid ="Not found"
+	   value.truckid = "Not Found"
 	angular.forEach($rootScope.alldevices,function(myvalue,mykey){
-	if(myvalue.did == value.did){
-		value.tankid = myvalue.tankid
-		value.truckid = myvalue.truckid
-	}	
+		if(myvalue.did == value.did){
+			value.tankid = myvalue.tankid
+			value.truckid = myvalue.truckid
+		}	
 	})
+
+
     $scope.myData.push(
     	{
-	  "id" : value._id.$id,
-	   "tankid" : value.tankid,
+	      "id" : value._id.$id,
+	      "tankid" : value.tankid,
 	      "truckid" : value.truckid,
 	      "did" : value.did,
-	      "dt" : value.dt,
-	      "lat" : value.lat,
-	      "long" : value.long       
+	      "dt" : moment(value.dt).format('DD-MM-YYYY'),
+	      "routeid" : value.routeid,
+	      "supplier":value.supplier,
+	      "suppliercrn":value.suppliercrn
+	      
 	      
 	    })
+    
 	})
 })
 
 
-$scope.dropdownToggle = false;	
+	
 $scope.formdata = {};
 $scope.formdata.time=new Date();
 $scope.onTimeSet = function (newDate, oldDate) {
  $scope.dropdownToggle = false;
 }
 $scope.ok = function(){
-	
 	var string = '##' + 
 	$scope.formdata.did + ',' +
 	//$scope.formdata.time.toISOString() + ',' +
 	moment($scope.formdata.time).format("YYYYMMDDTHHmmss") + 'Z,' +
-	$scope.formdata.lat + ',' +
-	$scope.formdata.long + ',' 	
+	$scope.formdata.routeid + ',' +
+	$scope.formdata.supplier + ',' +
+	$scope.formdata.suppliercrn+ ',' 
+	
 	string = string + 'return,*'
 
-	dfo.postMethod('tloc/push',string).then(function(response){
-	
-		if(response.status == 200){			
+	dfo.postMethod('route/pushdata',string).then(function(response){		
+		if(response.status == 200){	
 			$scope.formdata.tankid ="Not found"
 		   	$scope.formdata.truckid = "Not Found"
 			angular.forEach($rootScope.alldevices,function(myvalue,mykey){
@@ -67,15 +74,15 @@ $scope.ok = function(){
 				     "id" : response.data.$id,
 				      "did" : $scope.formdata.did,
 				      "tankid" : $scope.formdata.tankid,
-      				      "truckid" : $scope.formdata.truckid,	
-				      "dt" : moment($scope.formdata.time).format("YYYY-MM-DD HH:mm:ss"),
-				      "lat" : $scope.formdata.lat,
-				      "long" : $scope.formdata.long 
-				     
+      				      "truckid" : $scope.formdata.truckid,
+				      "dt" : moment($scope.formdata.time).format("DD-MM-YYYY"),
+				     "routeid" : $scope.formdata.routeid,
+				      "supplier":$scope.formdata.supplier,
+				      "suppliercrn":$scope.formdata.suppliercrn
 				      
 				    }
 				    )
-			 Notification.success({message : 'Record Added' ,delay : 3000})
+			Notification.success({message : 'Record Added' ,delay : 3000}) 
 			$scope.formdata = {};
 			$scope.formdata.time=new Date();
 		}
@@ -91,6 +98,7 @@ $scope.ok = function(){
    selectionRowHeaderWidth: 35,
    rowHeight: 35,
    rowWidth : 20,
+   multiSelect: false,
    enableColumnResizing : true,
    paginationPageSizes: [10, 20, 30],
    paginationPageSize: 10,
@@ -98,18 +106,20 @@ $scope.ok = function(){
    { field: 'did' ,displayName:'Device' ,enableCellEdit : false},
    { field: 'tankid' ,displayName:'Tank ID' ,enableCellEdit : false},
    { field: 'truckid' ,displayName:'Truck ID' ,enableCellEdit : false},
-   { field: 'dt',displayName:'Date' ,enableCellEdit : false,width : 160 ,sort: {
+   { field: 'dt',displayName:'Date' ,enableCellEdit : false,width : 120 ,sort: {
           direction: uiGridConstants.DESC,
           priority: 0,
         }}	,
-   { field: 'lat',displayName:'Lat' }	,
-   { field: 'long',displayName:'Long' }	
-    
+   { field: 'routeid',displayName:'Route ID' }	,
+   { field: 'supplier',displayName:'Supplier' }	,
+   { field: 'suppliercrn',displayName:'Supplier CRN' }	
+   
    ]
   
    
    
  }
+
  $scope.gridOptions.onRegisterApi = function(gridApi) {
   //set gridApi on scope
   $scope.gridApi = gridApi;
@@ -121,9 +131,14 @@ $scope.ok = function(){
     	var data = {};
 	    data.id  = rowEntity.id ;
 	    data.change = colDef.field;
-	    data.value = newValue;	    
-	  
-    	dfo.postMethod('tloc/update',data).then(function(response){
+	    // multiplying 10 if numerical value is changed
+	    if(['tavg','tmin','tmax','vol'].indexOf(data.change) != -1  ){
+	    	data.value = parseFloat(newValue) *10;	    	
+	    }else
+	    {
+	    	data.value = newValue;	    
+	    }
+    	dfo.postMethod('route/updatedata',data).then(function(response){
     		if(response.data == 1){
     			Notification.success({message : 'Update Succcessful' ,delay : 3000})
     		}else{
@@ -133,10 +148,10 @@ $scope.ok = function(){
 
     }
    
- 
+
   });
 };
-
+ 
 $scope.delete= function(){
 	if( $scope.gridApi.selection.getSelectedRows().length == 0){
 					Notification.error({message: 'Please select a record ', delay: 3000});
@@ -147,7 +162,7 @@ $scope.delete= function(){
 					var data ={}; 
 					data.id = selection[0] .id;
 
-					dfo.postMethod('tloc/delete' , data).then(function(response){
+					dfo.postMethod('route/deletedata' , data).then(function(response){
 						if(response.data == 1){
 				    			Notification.success({message : 'Record Deleted' ,delay : 3000});
 		    			//remove from grid
@@ -163,6 +178,7 @@ $scope.delete= function(){
 
 				}
 			}
- 
+			        
+
 
 });

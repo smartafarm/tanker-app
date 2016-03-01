@@ -1,14 +1,32 @@
 var tankerapp = angular.module('tankerapp');
 tankerapp
-.controller('driverCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification) {	
+.controller('driverCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
+
+if(!$rootScope.alldevices){
+ $rootScope.device.then(function(devices){
+   	$rootScope.alldevices = devices;
+   })	
+}
+
 dfo.getMethod ('driver/fetchall').then(function(response){
    var data = response;       
    $scope.myData = [];        
-   data.forEach(function(value,key){  		
+   data.forEach(function(value,key){  	
+	   value.tankid ="Not found"
+	   value.truckid = "Not Found"
+	angular.forEach($rootScope.alldevices,function(myvalue,mykey){
+		if(myvalue.did == value.did){
+			value.tankid = myvalue.tankid
+			value.truckid = myvalue.truckid
+		}	
+	})
+
 
     $scope.myData.push(
     	{
-		  "id" : value._id.$id,
+	      "id" : value._id.$id,
+	      "tankid" : value.tankid,
+	      "truckid" : value.truckid,
 		  "did" : value.did,
 	      "driverid" : value.driverid,
 	      "drivername" : value.drivername
@@ -35,10 +53,20 @@ $scope.ok = function(){
 
 	dfo.postMethod('driver/push',string).then(function(response){		
 		if(response.status == 200){			
+			$scope.formdata.tankid ="Not found"
+		   	$scope.formdata.truckid = "Not Found"
+			angular.forEach($rootScope.alldevices,function(myvalue,mykey){
+				if(myvalue.did == $scope.formdata.did){
+					$scope.formdata.tankid = myvalue.tankid
+					$scope.formdata.truckid = myvalue.truckid
+				}
+				})		
 			 $scope.myData.push(
 			    	{
-					  "id" : response.data.$id,
+				     "id" : response.data.$id,
 				      "did" : $scope.formdata.did,
+				      "tankid" : $scope.formdata.tankid,
+      				      "truckid" : $scope.formdata.truckid,
 				      "driverid" : $scope.formdata.driverid,
 				      "drivername" : $scope.formdata.drivername,
 				      
@@ -65,6 +93,8 @@ $scope.ok = function(){
    paginationPageSize: 10,
    columnDefs:[
    { field: 'did' ,displayName:'Device' ,enableCellEdit : false},
+   { field: 'tankid' ,displayName:'Tank ID' ,enableCellEdit : false},
+   { field: 'truckid' ,displayName:'Truck ID' ,enableCellEdit : false},
    { field: 'driverid',displayName:'Driver ID' }	,
    { field: 'drivername',displayName:'Driver Name' }	,
    
@@ -108,6 +138,31 @@ $scope.ok = function(){
     console.log(oldValue);*/
   });
 };
- 
+$scope.delete= function(){
+	if( $scope.gridApi.selection.getSelectedRows().length == 0){
+					Notification.error({message: 'Please select a record ', delay: 3000});
+				}else{
+
+					var selection = $scope.gridApi.selection.getSelectedRows();
+
+					var data ={}; 
+					data.id = selection[0] .id;
+
+					dfo.postMethod('driver/delete' , data).then(function(response){
+						if(response.data == 1){
+				    			Notification.success({message : 'Record Deleted' ,delay : 3000});
+		    			//remove from grid
+				   	angular.forEach($scope.gridApi.selection.getSelectedRows(), function (data, index) {
+					        $scope.myData.splice($scope.myData.lastIndexOf(data), 1);
+					      });
+
+				    		}else{
+				    			Notification.error({message : 'Delete Failed. Please try again' ,delay : 3000})
+				    		}
+					})
+
+
+				}
+			}
 
 });

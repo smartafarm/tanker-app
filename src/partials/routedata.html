@@ -1,4 +1,4 @@
-<h1>Daily Pickup</h1>
+<h1>Route Data</h1>
 <uib-accordion close-others="oneAtATime" >
     <uib-accordion-group heading="+ Add Record" is-open="false" >
         <form class="form-horizontal" name="newentry" id="newentry" style="font-size:85%" novalidate>        
@@ -7,47 +7,26 @@
                 <div class="row">
                     <md-datepicker style="margin-top:32px" class="col-md-3" ng-model="formdata.time" md-placeholder="Enter date"></md-datepicker>
     
-                <div class="col-md-4">
-                    <uib-timepicker ng-model="formdata.time" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="true"></uib-timepicker>              
-                </div>
+                
                 </div>
                 <md-input-container class="col-md-3">
                     <label>Device ID</label>
                     <input type="text" required name="did" ng-model="formdata.did">              
                 </md-input-container>
 
-                
                 <md-input-container class="col-md-2">
-                    <label>Lat</label>
-                    <input required name="lat" ng-model="formdata.lat">              
+                    <label>Route id</label>
+                    <input required name="routeid" ng-model="formdata.routeid">              
                 </md-input-container>
-                <md-input-container class="col-md-2">
-                    <label>Long</label>
-                    <input required name="long" ng-model="formdata.long">             
-                </md-input-container>
+       
                 <md-input-container class="col-md-2">
                     <label>Supplier</label>
                     <input required name="supplier" ng-model="formdata.supplier">             
                 </md-input-container>
+
                 <md-input-container class="col-md-2">
-                    <label>Route</label>
-                    <input required name="route" ng-model="formdata.route">            
-                </md-input-container>
-                <md-input-container class="col-md-2">
-                    <label>Temp Avg</label>
-                    <input type = "number" required name="tavg" ng-model="formdata.tavg">             
-                </md-input-container>
-                <md-input-container class="col-md-2">
-                    <label>Temp Max</label>
-                    <input type = "number" required name="tmax" ng-model="formdata.tmax">             
-                </md-input-container>
-                <md-input-container class="col-md-2">
-                    <label>Temp Min</label>
-                    <input type = "number" required name="tmin" ng-model="formdata.tmin">             
-                </md-input-container>
-                <md-input-container class="col-md-2">
-                    <label>Volume</label>
-                    <input type = "number" required name="vol" ng-model="formdata.vol">              
+                    <label>Supplier Crn</label>
+                    <input required name="suppliercrn"   ng-model="formdata.suppliercrn">             
                 </md-input-container>
             </div>
            <div class="row">

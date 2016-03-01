@@ -108,6 +108,31 @@ $scope.ok = function(){
     console.log(oldValue);*/
   });
 };
- 
+$scope.delete= function(){
+	if( $scope.gridApi.selection.getSelectedRows().length == 0){
+					Notification.error({message: 'Please select a record ', delay: 3000});
+				}else{
+
+					var selection = $scope.gridApi.selection.getSelectedRows();
+
+					var data ={}; 
+					data.id = selection[0] .id;
+
+					dfo.postMethod('device/delete' , data).then(function(response){
+						if(response.data == 1){
+				    			Notification.success({message : 'Record Deleted' ,delay : 3000});
+		    			//remove from grid
+				   	angular.forEach($scope.gridApi.selection.getSelectedRows(), function (data, index) {
+					        $scope.myData.splice($scope.myData.lastIndexOf(data), 1);
+					      });
+
+				    		}else{
+				    			Notification.error({message : 'Delete Failed. Please try again' ,delay : 3000})
+				    		}
+					})
+
+
+				}
+			}
 
 });

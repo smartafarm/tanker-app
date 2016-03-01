@@ -4,10 +4,16 @@ tankerapp
 	'$state',	
 	'$http',
 	'$interval',
+	'dfo',
 	
-function($rootScope,$state,$http,$interval){	
+function($rootScope,$state,$http,$interval,dfo){	
 	
 	 // Default run of application
+	 if(!$rootScope.device){
+	 	 $rootScope.device = dfo.getMethod('device/fetchall').then(function(response){
+ 			return response;
+ })
+	 }
 
 	$rootScope.$on('$stateChangeStart', 
 		//cancel the timer pulling information from server when page is routed from dashboard

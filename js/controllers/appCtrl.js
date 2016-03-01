@@ -1,7 +1,8 @@
 var tankerapp = angular.module('tankerapp');
 tankerapp
 // Main Application Controller
-.controller('appCtrl', function($scope,$http,dfo,$mdSidenav) {
+.controller('appCtrl', function($scope,$http,dfo,$mdSidenav,$rootScope) {
+
  
 
   dfo.getMethod('dpu/fetch').then(function(data){

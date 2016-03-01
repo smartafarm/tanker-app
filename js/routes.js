@@ -113,6 +113,19 @@ tankerapp
                 
                 
             })
+            
+            .state('dashboard.route.data', {
+                url: '/data',
+                views:{
+                    "routeview":{
+                        templateUrl: 'partials/routedata.html'  ,
+                       controller : 'routedataCtrl'
+                                            
+                    }
+                }                
+                
+                
+            })
             .state('dashboard.supplier', {
                 url: '/supplier',
                 views:{
