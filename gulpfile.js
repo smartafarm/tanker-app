@@ -45,9 +45,9 @@ gulp.task('appjs', function(){
 		'js/routes.js'
 		])// eof gul src
 	.pipe(concat('app.js'))
-	//.pipe(gulp.dest('src/js'))
-	//.pipe(ngAnnotate())
-	//.pipe(uglify())
+	.pipe(gulp.dest('src/js'))
+	.pipe(ngAnnotate())
+	.pipe(uglify())
 	.pipe(gulp.dest('src/js'))
 
 })// eof appjs

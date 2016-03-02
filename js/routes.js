@@ -11,9 +11,9 @@ tankerapp
         $stateProvider
             .state('login', {
                 url: '/login',
-                templateUrl: 'templates/login.html',
-                controller : 'LoginCtrl',
-                data :{}
+                templateUrl: 'partials/login.html',
+                controller : 'LoginCtrl'
+              
             })           
             .state('dashboard', {
                 url:'/dashboard',                     
