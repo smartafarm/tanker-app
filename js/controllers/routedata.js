@@ -32,8 +32,11 @@ dfo.getMethod ('route/fetchalldata').then(function(response){
 	      "did" : value.did,
 	      "dt" : moment(value.dt).format('DD-MM-YYYY'),
 	      "routeid" : value.routeid,
+	      "pid":value.pid,
+	      "destID":value.destID,
 	      "supplier":value.supplier,
-	      "suppliercrn":value.suppliercrn
+	      "suppliercrn":value.suppliercrn,
+	     
 	      
 	      
 	    })
@@ -54,6 +57,8 @@ $scope.ok = function(){
 	//$scope.formdata.time.toISOString() + ',' +
 	moment($scope.formdata.time).format("YYYYMMDDTHHmmss") + 'Z,' +
 	$scope.formdata.routeid + ',' +
+	$scope.formdata.pid + ',' +
+	$scope.formdata.destID + ',' +
 	$scope.formdata.supplier + ',' +
 	$scope.formdata.suppliercrn+ ',' 
 	
@@ -76,7 +81,9 @@ $scope.ok = function(){
 				      "tankid" : $scope.formdata.tankid,
       				      "truckid" : $scope.formdata.truckid,
 				      "dt" : moment($scope.formdata.time).format("DD-MM-YYYY"),
-				     "routeid" : $scope.formdata.routeid,
+			     		"routeid" : $scope.formdata.routeid,
+				      "pid":$scope.formdata.pid,
+				      "destID":$scope.formdata.destID,
 				      "supplier":$scope.formdata.supplier,
 				      "suppliercrn":$scope.formdata.suppliercrn
 				      
@@ -111,6 +118,8 @@ $scope.ok = function(){
           priority: 0,
         }}	,
    { field: 'routeid',displayName:'Route ID' }	,
+   { field: 'pid',displayName:'Processor ID' }	,
+   { field: 'destID',displayName:'Destination ID' }	,
    { field: 'supplier',displayName:'Supplier' }	,
    { field: 'suppliercrn',displayName:'Supplier CRN' }	
    

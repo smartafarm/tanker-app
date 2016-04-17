@@ -1,6 +1,6 @@
 var tankerapp = angular.module('tankerapp');
 tankerapp
-.controller('supplierCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
+.controller('processorCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
 
 if(!$rootScope.alldevices){
  $rootScope.device.then(function(devices){
@@ -8,7 +8,7 @@ if(!$rootScope.alldevices){
    })	
 }
 
-dfo.getMethod ('supplier/fetchall').then(function(response){
+dfo.getMethod ('processor/fetchall').then(function(response){
    var data = response;       
    $scope.myData = [];        
    data.forEach(function(value,key){  	
@@ -25,18 +25,16 @@ dfo.getMethod ('supplier/fetchall').then(function(response){
     $scope.myData.push(
     	{
 	      "id" : value._id.$id,
+	      "did" : value.did,
 	      "tankid" : value.tankid,
 	      "truckid" : value.truckid,
-	      "did" : value.did,	      
-	      "supID" : value.supID,
 	      "pid" : value.pid ,
-	      "supno":value.supno,
-	      "supname":value.supname,
-	      "street":value.street,
-	      "city":value.city,
+	      "pname":value.pname,
+	      "destID":value.destID,
+	      "destName":value.destName,
 	      "lat" : value.lat,
-	      "long" : value.long ,
-	      "expqty":parseFloat(value.expqty)/10
+	      "long" : value.long 
+	      
 	      
 	    })
     
@@ -48,19 +46,15 @@ $scope.panelstatus = false;
 $scope.ok = function(){
 	var string = '##' + 
 	$scope.formdata.did + ',' +
-	$scope.formdata.supID + ',' +
 	$scope.formdata.pid + ',' +
-	
-	$scope.formdata.supno + ',' +
-	$scope.formdata.supname + ',' +
-	$scope.formdata.street + ',' +
-	$scope.formdata.city + ',' +
+	$scope.formdata.pname + ',' +
+	$scope.formdata.destID + ',' +
+	$scope.formdata.destName + ',' +
 	$scope.formdata.lat + ',' +
-	$scope.formdata.long + ',' +	
-	$scope.formdata.expqty*10 + ',' 
+	$scope.formdata.long + ',' 	
 	string = string + 'return,*'
 
-	dfo.postMethod('supplier/push',string).then(function(response){		
+	dfo.postMethod('processor/push',string).then(function(response){		
 		if(response.status == 200){			
 			$scope.formdata.tankid ="Not found"
 		   	$scope.formdata.truckid = "Not Found"
@@ -73,18 +67,16 @@ $scope.ok = function(){
 			 $scope.myData.push(
 			    	{
 				     "id" : response.data.$id,
+				     "tankid" :  $scope.formdata.tankid,
+	      				"truckid" :  $scope.formdata.truckid,
 				      "did" : $scope.formdata.did,
-				      "tankid" : $scope.formdata.tankid,
-      				      "truckid" : $scope.formdata.truckid,      
-				      "supID" : $scope.formdata.supID,
 				      "pid" : $scope.formdata.pid ,
-				      "supno":$scope.formdata.supno,
-				      "supname":$scope.formdata.supname,
-				      "street":$scope.formdata.street,
-				      "city":$scope.formdata.city,
+				      "pname":$scope.formdata.pname,
+				      "destID":$scope.formdata.destID,
+				      "destName":$scope.formdata.destName,
 				      "lat" : $scope.formdata.lat,
 				      "long" : $scope.formdata.long ,
-				      "expqty":parseFloat($scope.formdata.expqty)			      
+				     			      
 				      
 				    }
 				    )
@@ -112,15 +104,12 @@ $scope.ok = function(){
    { field: 'did' ,displayName:'Device' ,enableCellEdit : false},  
    { field: 'tankid' ,displayName:'Tank ID' ,enableCellEdit : false},
    { field: 'truckid' ,displayName:'Truck ID' ,enableCellEdit : false},
-   { field: 'supID',displayName:'Supp ID' }	,
    { field: 'pid',displayName:'Processor ID' }	,
-   { field: 'supno',displayName:'Supp #' }	,
-   { field: 'supname',displayName:'Supp Name' }	,
-    { field: 'street',displayName:'Street' }	,
-   { field: 'city',displayName:'City' }	,
+   { field: 'pname',displayName:'Processor Name' }	,
+   { field: 'destID',displayName:'Destination ID' }	,
+    { field: 'destName',displayName:'Destination Name' }	,
    { field: 'lat',displayName:'Lat' }	,
-   { field: 'long',displayName:'Long' }	,
-   { field: 'expqty',displayName:'QTY' }	   
+   { field: 'long',displayName:'Long' }	   
    ]
 	
  }
@@ -143,7 +132,7 @@ $scope.ok = function(){
 	    {
 	    	data.value = newValue;	    
 	    }
-    	dfo.postMethod('supplier/update',data).then(function(response){
+    	dfo.postMethod('processor/update',data).then(function(response){
     		if(response.data == 1){
     			Notification.success({message : 'Update Succcessful' ,delay : 3000})
     		}else{
@@ -155,6 +144,7 @@ $scope.ok = function(){
 
   });
 };
+
 $scope.delete= function(){
 	if( $scope.gridApi.selection.getSelectedRows().length == 0){
 					Notification.error({message: 'Please select a record ', delay: 3000});
@@ -165,7 +155,7 @@ $scope.delete= function(){
 					var data ={}; 
 					data.id = selection[0] .id;
 
-					dfo.postMethod('supplier/delete' , data).then(function(response){
+					dfo.postMethod('processor/delete' , data).then(function(response){
 						if(response.data == 1){
 				    			Notification.success({message : 'Record Deleted' ,delay : 3000});
 		    			//remove from grid

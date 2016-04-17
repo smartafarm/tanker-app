@@ -176,6 +176,16 @@ tankerapp
                 
                 
             })
+             .state('dashboard.processor', {
+                url: '/processor',
+                views:{
+                    "contentview":{
+                        templateUrl: 'partials/processor.html'  ,
+                        controller :'processorCtrl'
+                                            
+                    }
+                }  
                 
-    }
-]);
+            })
+             
+}]);

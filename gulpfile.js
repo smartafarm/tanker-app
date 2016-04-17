@@ -7,6 +7,7 @@ var uglify			= require('gulp-uglify');
 var runSequence		= require('run-sequence');
 var watch			= require('gulp-watch');
 var ngAnnotate 		= require('gulp-ng-annotate');
+var gutil = require('gulp-util');
 
 /* tasks */
 gulp.task('depsjs', function(){
@@ -27,7 +28,7 @@ gulp.task('depsjs', function(){
 		'bower_components/pdfmake/build/pdfmake.min.js',
 		'bower_components/pdfmake/build/vfs_fonts.js'	,
 		'bower_components/ng-file-upload/ng-file-upload-shim.min.js',
-		'bower_components/ng-file-upload/ng-file-upload.min.js'
+		'bower_components/ng-file-upload/ng-file-upload-all.min.js'
 		])// eof gul src
 	.pipe(concat('devdeps.js'))
 	.pipe(gulp.dest('src/js'))
@@ -45,9 +46,10 @@ gulp.task('appjs', function(){
 		'js/routes.js'
 		])// eof gul src
 	.pipe(concat('app.js'))
+	//.on('error', gutil.log)
 	.pipe(gulp.dest('src/js'))
-	.pipe(ngAnnotate())
-	.pipe(uglify())
+	//.pipe(ngAnnotate())
+	//.pipe(uglify())
 	.pipe(gulp.dest('src/js'))
 
 })// eof appjs

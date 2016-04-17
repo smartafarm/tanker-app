@@ -33,7 +33,8 @@ dfo.getMethod ('route/fetchallend').then(function(response){
 	      "long" : value.long ,
 	      "sibtemp":parseFloat(value.sibtemp)/10,
 	      "mltemp":parseFloat(value.mltemp)/10,
-	      "frno" :value.frno,
+	      "prno" :value.prno,
+	      "frsn" :value.frsn,
 	      
 	    })
     
@@ -57,7 +58,8 @@ $scope.ok = function(){
 	$scope.formdata.long + ',' +
 	$scope.formdata.sibtemp*10 + ',' +
 	$scope.formdata.mltemp*10 + ',' +
-	$scope.formdata.frno + ',' 
+	$scope.formdata.prno + ',' +
+	$scope.formdata.frsn + ',' 
 	string = string + 'return,*'
 
 	dfo.postMethod('route/pushend',string).then(function(response){		
@@ -75,14 +77,15 @@ $scope.ok = function(){
 				     "id" : response.data.$id,
 				      "did" : $scope.formdata.did,
 				      "tankid" : $scope.formdata.tankid,
-      				      "truckid" : $scope.formdata.truckid,
+  				      "truckid" : $scope.formdata.truckid,
 				      "dt" : moment($scope.formdata.time).format("YYYY-MM-DD HH:mm:ss"),
 				      "rno" : $scope.formdata.rno,
 				      "lat" : $scope.formdata.lat,
 				      "long" : $scope.formdata.long ,
 				      "sibtemp":parseFloat($scope.formdata.sibtemp),
 				      "mltemp":parseFloat($scope.formdata.mltemp),
-				      "frno" : $scope.formdata.frno,			     
+				      "prno" : $scope.formdata.prno,
+				      "frsn" : $scope.formdata.frsn,			     
 				      
 				    }
 				    )
@@ -119,8 +122,9 @@ $scope.ok = function(){
    { field: 'long',displayName:'Long' }	,   
    { field: 'sibtemp',displayName:'S. Ice Box Temp.' }	, 
    { field: 'mltemp',displayName:'Milk Load Temp.' }	, 
-   { field: 'frno',displayName:'Factory #' }	
-    
+   { field: 'prno',displayName:'Procecssor Ref #' },
+   { field: 'frsn',displayName:'Factory Sample #' }	
+   
    ]
   
    
