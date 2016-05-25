@@ -1,26 +1,26 @@
-<h1>CIP</h1>
-<!-- Data Entry Module for CIP
+<h1>Processor</h1>
 <uib-accordion close-others="oneAtATime" >
-    <uib-accordion-group heading="+ Add Record" is-open="false" >
+    <uib-accordion-group heading="+ Add Record" is-open="panelstatus" >
         <form class="form-horizontal" name="newentry" id="newentry" style="font-size:85%" novalidate>        
 
-            <div class="col-md-12">
-                <div class="row">
-                    <md-datepicker style="margin-top:32px" class="col-md-3" ng-model="formdata.time" md-placeholder="Enter date"></md-datepicker>
-   
-                <div class="col-md-4">
-                    <uib-timepicker ng-model="formdata.time" ng-change="changed()" hour-step="1" minute-step="1" show-meridian="true"></uib-timepicker>              
-                </div>
-                </div>
-                <md-input-container class="col-md-3">
-                    <label>Device ID</label>
-                    <input type="text" required name="did" ng-model="formdata.did">              
+            <div class="col-md-12"> 
+
+                 <md-input-container class="col-md-3">
+                    <label>Organisation Name</label>
+                    <input type="text" required name="pname" ng-model="formdata.orgName">              
                 </md-input-container>
-                            
-                <md-input-container class="col-md-2">
-                    <label>Temprature</label>
-                    <input type = "number" required name="temp" ng-model="formdata.temp">              
+
+                 <md-input-container class="col-md-3">
+                    <label>Street</label>
+                    <input type="text" required name="destID" ng-model="formdata.street">              
+                </md-input-container>   
+    
+                 <md-input-container class="col-md-3">
+                    <label>City</label>
+                    <input type="text" required name="destName" ng-model="formdata.city">              
                 </md-input-container>
+  
+                     
             </div>
            <div class="row">
             <div class="form-group col-md-12">
@@ -34,7 +34,7 @@
 </uib-accordion>
 <div  class="col-md-12 clearfix ">
     <button type="submit" class="pull-right btn btn-danger" ng-click="delete()"  style="margin-bottom: 10px;"> Delete Record</button>                   
- </div>           -->
+ </div>          
 <div class="col-md-12 clearfix well">
 
 <div class="row" style="background-color:#eee;margin-top:10px">         

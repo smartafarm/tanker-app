@@ -113,7 +113,18 @@ tankerapp
                 
                 
             })
-            
+            .state('dashboard.route.view', {
+                url: '/view',
+                views:{
+                    "routeview":{
+                        templateUrl: 'partials/viewroute.html'  ,
+                       controller : 'routeviewCtrl'
+                                            
+                    }
+                }                
+                
+                
+            })
             .state('dashboard.route.data', {
                 url: '/data',
                 views:{
@@ -187,5 +198,17 @@ tankerapp
                 }  
                 
             })
+              .state('dashboard.org', {
+                url: '/organisation',
+                views:{
+                    "contentview":{
+                        templateUrl: 'partials/organisation.html'  ,
+                        controller :'orgCtrl'
+                                            
+                    }
+                }  
+                
+            })
+             
              
 }]);

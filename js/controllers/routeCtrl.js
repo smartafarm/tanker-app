@@ -3,7 +3,7 @@ tankerapp
 // Main Application Controller
 .controller('routeCtrl', function($scope,$state) {
  
-	$state.go('dashboard.route.start');
+	$state.go('dashboard.route.view');
   
 
 })

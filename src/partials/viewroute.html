@@ -1,0 +1,31 @@
+<div ng-show="loadingCursor">Loading...</div>
+<div ng-show="!loadingCursor">
+<h1>View Route</h1>
+<div class="clearfix" style="margin-bottom: 10px;">
+    <p>Search</p>
+    <input ng-model="search.$">
+</div>
+<div ng-repeat="route in routes | filter:search:strict | orderBy:'dt'">
+    <uib-accordion close-others="oneAtATime" >
+        <uib-accordion-group heading="Route {{route.routeid}} || Route Date {{route.dt | date:'dd-MM-YYYY'}}" is-open="false" >
+         <div class="col-md-4">
+             Driver id : {{route.driverid}} <br>
+             Factory Reference : {{route.fref}} <br>
+             Factory Sample No : {{route.frsn}}<br>
+             Milk Avg Temp: {{route.mlTemp}} <br>
+             Sample Ice Box Temp : {{route.sibTemp}}<br>
+         </div>
+         <div class="col-md-4">
+             Start : {{route.startStamp}} <br>
+             Start Lat : {{route.latStart}} <br>
+             Start Long : {{route.longStart}} <br>
+         </div>
+          <div class="col-md-4">
+             End : {{route.endStamp}} <br>
+             End Lat : {{route.latEnd}} <br>
+             End Long :{{route.longEnd}} <br>
+         </div>
+        </uib-accordion-group>
+    </uib-accordion>
+</div>
+</div>

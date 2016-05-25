@@ -170,7 +170,18 @@ tankerapp
                 
                 
             })
-            
+            .state('dashboard.route.view', {
+                url: '/view',
+                views:{
+                    "routeview":{
+                        templateUrl: 'partials/viewroute.html'  ,
+                       controller : 'routeviewCtrl'
+                                            
+                    }
+                }                
+                
+                
+            })
             .state('dashboard.route.data', {
                 url: '/data',
                 views:{
@@ -244,6 +255,18 @@ tankerapp
                 }  
                 
             })
+              .state('dashboard.org', {
+                url: '/organisation',
+                views:{
+                    "contentview":{
+                        templateUrl: 'partials/organisation.html'  ,
+                        controller :'orgCtrl'
+                                            
+                    }
+                }  
+                
+            })
+             
              
 }]);
 var tankerapp =angular.module('tankerapp');
@@ -261,7 +284,16 @@ function($rootScope,$state,$http,$interval,dfo,Notification){
 	 if(!$rootScope.device){
 	 	 $rootScope.device = dfo.getMethod('device/fetchall').then(function(response){
  			return response;
- })
+ 		})
+	 }
+
+	  if(!$rootScope.userOrgID){
+	 	 $rootScope.userOrgID = dfo.getMethod('org/getID').then(function(response){
+	 	 	
+ 			return response;
+
+ 		})
+
 	 }
 
 	$rootScope.$on('$stateChangeStart', 
@@ -280,8 +312,8 @@ function($rootScope,$state,$http,$interval,dfo,Notification){
 	    	var now  = moment().toJSON();
 		var ms = moment(now).diff(moment(then));
 		var d = moment.duration(ms);
-		console.log(d._data.minutes);
-		if(parseFloat(d._data.minutes) > 30 ){
+		
+		if(parseFloat(d._data.minutes) > 100 ){
 			Notification.error({ title:'Session Exprired',message:'Please Login Again' ,delay : 4000 } );
 			sessionStorage.removeItem('time');	
 	    		event.preventDefault();
@@ -490,6 +522,15 @@ $scope.delete= function(){
 
 });
 
+
+/*
+Device Master Controller .
+Tanker app 
+Verision 1.0 
+Data Factory dfo calling for all values . 
+Time set
+
+ */
 var tankerapp = angular.module('tankerapp');
 tankerapp
 .controller('deviceCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification) {	
@@ -594,10 +635,7 @@ $scope.ok = function(){
 
     }
    
-   /* console.log(rowEntity);
-    console.log(colDef);
-    console.log(newValue);
-    console.log(oldValue);*/
+  
   });
 };
 $scope.delete= function(){
@@ -1087,6 +1125,144 @@ tankerapp
 
 var tankerapp = angular.module('tankerapp');
 tankerapp
+.controller('orgCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
+
+
+if(!$rootScope.alldevices){
+ $rootScope.device.then(function(devices){
+   	$rootScope.alldevices = devices;
+   })	
+}
+
+dfo.getMethod ('org/fetchall').then(function(response){
+   var data = response;       
+   $scope.myData = [];        
+   data.forEach(function(value,key){  	
+	   
+
+    $scope.myData.push(
+    	{
+	      "id" : value._id.$id,
+	      "orgName" : value.orgName,
+	      "street" : value.street,
+	      "city" : value.city,   
+	      
+	    })
+    
+	})
+})
+
+$scope.formdata = {};		
+$scope.panelstatus = false;
+$scope.ok = function(){
+	var string = '##' + 
+	$scope.formdata.orgName + ',' +
+	$scope.formdata.street + ',' +
+	$scope.formdata.city + ',' 	
+	string = string + 'return,*'
+
+	dfo.postMethod('org/push',string).then(function(response){		
+		if(response.status == 200){			
+		
+			 $scope.myData.push(
+			    	{
+				     "id" : response.data.$id,
+				     "orgName" :  $scope.formdata.orgName,
+	      				"street" :  $scope.formdata.street,
+				      "city" : $scope.formdata.city
+
+				    }
+				    )
+			Notification.success({message : 'Record Added' ,delay : 3000}) 
+			$scope.panelstatus = false;	
+			$scope.formdata = {};	
+
+		}
+	})
+	
+	//console.log(moment($scope.formdata.time).format("YYYY-MM-DD HH:mm:ss"));
+}
+
+ $scope.gridOptions = {	    
+   data: 'myData',
+   enableGridMenu: true,
+   enableRowSelection: true,		    
+   selectionRowHeaderWidth: 35,
+   rowHeight: 35,
+   rowWidth : 20,
+   enableColumnResizing : true,
+   paginationPageSizes: [10, 20, 30],
+   paginationPageSize: 10,
+   columnDefs:[
+   { field: 'orgName' ,displayName:'Name' ,enableCellEdit : false},  
+   { field: 'street' ,displayName:'Street' ,enableCellEdit : false},
+   { field: 'city' ,displayName:'City' ,enableCellEdit : false}
+   ]
+	
+ }
+
+ $scope.gridOptions.onRegisterApi = function(gridApi) {
+  //set gridApi on scope
+  $scope.gridApi = gridApi;
+  gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
+    //Do your REST call here via $http.get or $http.post
+
+    //Alert to show what info about the edit is available
+    if(newValue != oldValue){
+    	var data = {};
+	    data.id  = rowEntity.id ;
+	    data.change = colDef.field;
+	    // multiplying 10 if numerical value is changed
+	    if(['expqty'].indexOf(data.change) != -1  ){
+	    	data.value = parseFloat(newValue) *10;	    	
+	    }else
+	    {
+	    	data.value = newValue;	    
+	    }
+    	dfo.postMethod('org/update',data).then(function(response){
+    		if(response.data == 1){
+    			Notification.success({message : 'Update Succcessful' ,delay : 3000})
+    		}else{
+    			Notification.error({message : 'Updated Failed. Please try again' ,delay : 3000})
+    		}
+    	})
+
+    }   
+
+  });
+};
+
+$scope.delete= function(){
+	if( $scope.gridApi.selection.getSelectedRows().length == 0){
+					Notification.error({message: 'Please select a record ', delay: 3000});
+				}else{
+
+					var selection = $scope.gridApi.selection.getSelectedRows();
+
+					var data ={}; 
+					data.id = selection[0] .id;
+
+					dfo.postMethod('org/delete' , data).then(function(response){
+						if(response.data == 1){
+				    			Notification.success({message : 'Record Deleted' ,delay : 3000});
+		    			//remove from grid
+				   	angular.forEach($scope.gridApi.selection.getSelectedRows(), function (data, index) {
+					        $scope.myData.splice($scope.myData.lastIndexOf(data), 1);
+					      });
+
+				    		}else{
+				    			Notification.error({message : 'Delete Failed. Please try again' ,delay : 3000})
+				    		}
+					})
+
+
+				}
+			}
+
+});
+
+var tankerapp = angular.module('tankerapp');
+tankerapp
 .controller('processorCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
 
 if(!$rootScope.alldevices){
@@ -1266,7 +1442,7 @@ tankerapp
 // Main Application Controller
 .controller('routeCtrl', function($scope,$state) {
  
-	$state.go('dashboard.route.start');
+	$state.go('dashboard.route.view');
   
 
 })
@@ -1655,6 +1831,196 @@ $scope.delete= function(){
 
 var tankerapp = angular.module('tankerapp');
 tankerapp
+.controller('routeviewCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
+	
+
+if(!$rootScope.alldevices){
+ $rootScope.device.then(function(devices){
+   	$rootScope.alldevices = devices;
+   })	
+}
+$scope.loadingCursor = true;
+dfo.getMethod ('route/fetchallroute').then(function(response){
+   data = response;
+   $scope.routes = [];	  
+   data.forEach(function(value,key){  	
+
+    $scope.routes.push(
+    	{
+	      "routeid" : value.routeid,
+	      "driverid" : value.driverid ? value.driverid : "Not Recorded",
+	      "dt" : moment(value.dt).format('DD-MM-YYYY'),
+	      "fref" : value.fref ? value.fref : "Not Recorded",
+	      "frsn" : value.frsn ? value.frsn : "Not Recorded",
+	      "latStart" : value.latStart ? value.latStart : "Not Recorded",
+	      "longStart" : value.longStart ? value.longStart : "Not Recorded",
+	      "latEnd" : value.latEnd ? value.latEnd : "Not Recorded",
+	      "longEnd" : value.longEnd ? value.longEnd : "Not Recorded",
+	      "mlTemp" : value.mlTemp ? value.mlTemp : "Not Recorded",
+	      "sibTemp" : value.sibTemp ? value.sibTemp : "Not Recorded",
+	      "startStamp" : value.startStamp ?moment.unix(value.startStamp['sec']).format("DD-MM-YYYY HH:SS") : "Not Recorded",
+	      "endStamp" : value.endStamp ?moment.unix(value.endStamp['sec']).format("DD-MM-YYYY HH:SS") : "Not Recorded",
+
+	     
+	    
+	      
+	    })
+    
+	})
+   console.log($scope.routes);
+   $scope.loadingCursor = false;
+})
+
+/*
+	
+$scope.formdata = {};
+$scope.formdata.time=new Date();
+$scope.onTimeSet = function (newDate, oldDate) {
+ $scope.dropdownToggle = false;
+}
+$scope.ok = function(){
+	var string = '##' + 
+	$scope.formdata.did + ',' +
+	//$scope.formdata.time.toISOString() + ',' +
+	moment($scope.formdata.time).format("YYYYMMDDTHHmmss") + 'Z,' +
+	$scope.formdata.routeid + ',' +
+	$scope.formdata.pid + ',' +
+	$scope.formdata.destID + ',' +
+	$scope.formdata.supplier + ',' +
+	$scope.formdata.suppliercrn+ ',' 
+	
+	string = string + 'return,*'
+
+	dfo.postMethod('route/pushdata',string).then(function(response){		
+		if(response.status == 200){	
+			$scope.formdata.tankid ="Not found"
+		   	$scope.formdata.truckid = "Not Found"
+			angular.forEach($rootScope.alldevices,function(myvalue,mykey){
+				if(myvalue.did == $scope.formdata.did){
+					$scope.formdata.tankid = myvalue.tankid
+					$scope.formdata.truckid = myvalue.truckid
+				}
+				})		
+			 $scope.myData.push(
+			    	{
+				     "id" : response.data.$id,
+				      "did" : $scope.formdata.did,
+				      "tankid" : $scope.formdata.tankid,
+      				      "truckid" : $scope.formdata.truckid,
+				      "dt" : moment($scope.formdata.time).format("DD-MM-YYYY"),
+			     		"routeid" : $scope.formdata.routeid,
+				      "pid":$scope.formdata.pid,
+				      "destID":$scope.formdata.destID,
+				      "supplier":$scope.formdata.supplier,
+				      "suppliercrn":$scope.formdata.suppliercrn
+				      
+				    }
+				    )
+			Notification.success({message : 'Record Added' ,delay : 3000}) 
+			$scope.formdata = {};
+			$scope.formdata.time=new Date();
+		}
+	})
+
+	//console.log(moment($scope.formdata.time).format("YYYY-MM-DD HH:mm:ss"));
+}
+
+ $scope.gridOptions = {	    
+   data: 'myData',
+   enableGridMenu: true,
+   enableRowSelection: true,		    
+   selectionRowHeaderWidth: 35,
+   rowHeight: 35,
+   rowWidth : 20,
+   multiSelect: false,
+   enableColumnResizing : true,
+   paginationPageSizes: [10, 20, 30],
+   paginationPageSize: 10,
+   columnDefs:[
+   { field: 'did' ,displayName:'Device' ,enableCellEdit : false},
+   { field: 'tankid' ,displayName:'Tank ID' ,enableCellEdit : false},
+   { field: 'truckid' ,displayName:'Truck ID' ,enableCellEdit : false},
+   { field: 'dt',displayName:'Date' ,enableCellEdit : false,width : 120 ,sort: {
+          direction: uiGridConstants.DESC,
+          priority: 0,
+        }}	,
+   { field: 'routeid',displayName:'Route ID' }	,
+   { field: 'pid',displayName:'Processor ID' }	,
+   { field: 'destID',displayName:'Destination ID' }	,
+   { field: 'supplier',displayName:'Supplier' }	,
+   { field: 'suppliercrn',displayName:'Supplier CRN' }	
+   
+   ]
+  
+   
+   
+ }
+
+ $scope.gridOptions.onRegisterApi = function(gridApi) {
+  //set gridApi on scope
+  $scope.gridApi = gridApi;
+  gridApi.edit.on.afterCellEdit($scope, function(rowEntity, colDef, newValue, oldValue) {
+    //Do your REST call here via $http.get or $http.post
+
+    //Alert to show what info about the edit is available
+    if(newValue != oldValue){
+    	var data = {};
+	    data.id  = rowEntity.id ;
+	    data.change = colDef.field;
+	    // multiplying 10 if numerical value is changed
+	    if(['tavg','tmin','tmax','vol'].indexOf(data.change) != -1  ){
+	    	data.value = parseFloat(newValue) *10;	    	
+	    }else
+	    {
+	    	data.value = newValue;	    
+	    }
+    	dfo.postMethod('route/updatedata',data).then(function(response){
+    		if(response.data == 1){
+    			Notification.success({message : 'Update Succcessful' ,delay : 3000})
+    		}else{
+    			Notification.error({message : 'Updated Failed. Please try again' ,delay : 3000})
+    		}
+    	})
+
+    }
+   
+
+  });
+};
+ 
+$scope.delete= function(){
+	if( $scope.gridApi.selection.getSelectedRows().length == 0){
+					Notification.error({message: 'Please select a record ', delay: 3000});
+				}else{
+
+					var selection = $scope.gridApi.selection.getSelectedRows();
+
+					var data ={}; 
+					data.id = selection[0] .id;
+
+					dfo.postMethod('route/deletedata' , data).then(function(response){
+						if(response.data == 1){
+				    			Notification.success({message : 'Record Deleted' ,delay : 3000});
+		    			//remove from grid
+				   	angular.forEach($scope.gridApi.selection.getSelectedRows(), function (data, index) {
+					        $scope.myData.splice($scope.myData.lastIndexOf(data), 1);
+					      });
+
+				    		}else{
+				    			Notification.error({message : 'Delete Failed. Please try again' ,delay : 3000})
+				    		}
+					})
+
+
+				}
+			}
+			        
+*/
+
+});
+
+var tankerapp = angular.module('tankerapp');
+tankerapp
 .controller('routeendCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification,$rootScope) {	
 
 if(!$rootScope.alldevices){
@@ -1863,14 +2229,6 @@ dfo.getMethod ('supplier/fetchall').then(function(response){
    var data = response;       
    $scope.myData = [];        
    data.forEach(function(value,key){  	
-	   value.tankid ="Not found"
-	   value.truckid = "Not Found"
-	angular.forEach($rootScope.alldevices,function(myvalue,mykey){
-		if(myvalue.did == value.did){
-			value.tankid = myvalue.tankid
-			value.truckid = myvalue.truckid
-		}	
-	})
 
 
     $scope.myData.push(
@@ -1878,15 +2236,16 @@ dfo.getMethod ('supplier/fetchall').then(function(response){
 	      "id" : value._id.$id,
 	      "tankid" : value.tankid,
 	      "truckid" : value.truckid,
-	      "did" : value.did,	      
+	     	      
 	      "supID" : value.supID,
 	      "pid" : value.pid ,
-	      "supno":value.supno,
+	      "pref":value.pref,
 	      "supname":value.supname,
 	      "street":value.street,
 	      "city":value.city,
 	      "lat" : value.lat,
 	      "long" : value.long ,
+	       "zone" : value.zone ,
 	      "expqty":parseFloat(value.expqty)/10
 	      
 	    })
@@ -1898,43 +2257,38 @@ $scope.formdata = {};
 $scope.panelstatus = false;
 $scope.ok = function(){
 	var string = '##' + 
-	$scope.formdata.did + ',' +
+	
 	$scope.formdata.supID + ',' +
 	$scope.formdata.pid + ',' +
 	
-	$scope.formdata.supno + ',' +
+	$scope.formdata.pref + ',' +
 	$scope.formdata.supname + ',' +
 	$scope.formdata.street + ',' +
 	$scope.formdata.city + ',' +
 	$scope.formdata.lat + ',' +
 	$scope.formdata.long + ',' +	
+	$scope.formdata.zone + ',' +
 	$scope.formdata.expqty*10 + ',' 
 	string = string + 'return,*'
 
 	dfo.postMethod('supplier/push',string).then(function(response){		
 		if(response.status == 200){			
-			$scope.formdata.tankid ="Not found"
-		   	$scope.formdata.truckid = "Not Found"
-			angular.forEach($rootScope.alldevices,function(myvalue,mykey){
-				if(myvalue.did == $scope.formdata.did){
-					$scope.formdata.tankid = myvalue.tankid
-					$scope.formdata.truckid = myvalue.truckid
-				}
-				})		
+				
 			 $scope.myData.push(
 			    	{
 				     "id" : response.data.$id,
-				      "did" : $scope.formdata.did,
+				      
 				      "tankid" : $scope.formdata.tankid,
       				      "truckid" : $scope.formdata.truckid,      
 				      "supID" : $scope.formdata.supID,
 				      "pid" : $scope.formdata.pid ,
-				      "supno":$scope.formdata.supno,
+				      "pref":$scope.formdata.pref,
 				      "supname":$scope.formdata.supname,
 				      "street":$scope.formdata.street,
 				      "city":$scope.formdata.city,
 				      "lat" : $scope.formdata.lat,
 				      "long" : $scope.formdata.long ,
+				      "zone" : $scope.formdata.zone ,
 				      "expqty":parseFloat($scope.formdata.expqty)			      
 				      
 				    }
@@ -1960,17 +2314,15 @@ $scope.ok = function(){
    paginationPageSizes: [10, 20, 30],
    paginationPageSize: 10,
    columnDefs:[
-   { field: 'did' ,displayName:'Device' ,enableCellEdit : false},  
-   { field: 'tankid' ,displayName:'Tank ID' ,enableCellEdit : false},
-   { field: 'truckid' ,displayName:'Truck ID' ,enableCellEdit : false},
    { field: 'supID',displayName:'Supp ID' }	,
    { field: 'pid',displayName:'Processor ID' }	,
-   { field: 'supno',displayName:'Supp #' }	,
+   { field: 'pref',displayName:'Processor #' }	,
    { field: 'supname',displayName:'Supp Name' }	,
     { field: 'street',displayName:'Street' }	,
    { field: 'city',displayName:'City' }	,
    { field: 'lat',displayName:'Lat' }	,
    { field: 'long',displayName:'Long' }	,
+   { field: 'zone',displayName:'Zone' }	,
    { field: 'expqty',displayName:'QTY' }	   
    ]
 	
@@ -2214,8 +2566,8 @@ return{
   getMethod:function(api){
             var deferred = $q.defer();
             $http({
-             url:'http://localhost/tankerApi/'+ api,
-              // url:'http://52.62.42.42/api/'+api,              
+             //url:'http://localhost/tankerApi/'+ api,
+             url:'http://52.62.42.42/api/'+api,              
                 method:'GET'
             }).then(function(response){
                 deferred.resolve(response.data)
@@ -2228,9 +2580,9 @@ return{
     
   var deferred = $q.defer();      
   $http({
-    //url:'http://www.smartafarm.com.au/api/'+api,
-    url:'http://localhost/tankerApi/'+ api,
-    //url:'http://52.62.42.42/api/'+ api,    
+    
+    //url:'http://localhost/tankerApi/'+ api,
+    url:'http://52.62.42.42/api/'+ api,    
     headers: { 'Content-Type': 'text/html' },
     method:'POST',
     data:({'query' : text})

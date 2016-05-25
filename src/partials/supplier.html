@@ -4,19 +4,10 @@
         <form class="form-horizontal" name="newentry" id="newentry" style="font-size:85%" novalidate>        
 
             <div class="col-md-12">           
-                <md-input-container class="col-md-3">
-                    <label>Device ID</label>
-                    <input type="text" required name="did" ng-model="formdata.did">              
-                </md-input-container>
 
                 <md-input-container class="col-md-3">
                     <label>Supplier ID</label>
                     <input type="text" required name="supID" ng-model="formdata.supID">              
-                </md-input-container>
-
-              	<md-input-container class="col-md-3">
-                    <label>Supplier No</label>
-                    <input type="text" required name="supno" ng-model="formdata.supno">              
                 </md-input-container>
 
                  <md-input-container class="col-md-3">
@@ -28,6 +19,10 @@
                     <label>Processor ID</label>
                     <input type="text" required name="pid" ng-model="formdata.pid">              
                 </md-input-container>   
+                    <md-input-container class="col-md-3">
+                    <label>Processor Ref</label>
+                    <input type="text" required name="pref" ng-model="formdata.pref">              
+                </md-input-container>
 
                 <md-input-container class="col-md-3">
                     <label>Street</label>
@@ -45,6 +40,10 @@
                 <md-input-container class="col-md-2">
                     <label>Long</label>
                     <input required name="long" ng-model="formdata.long">             
+                </md-input-container>
+                  <md-input-container class="col-md-2">
+                    <label>Zone</label>
+                    <input required name="zone" ng-model="formdata.zone">             
                 </md-input-container>
               	<md-input-container class="col-md-2">
                     <label>Expected Qty</label>

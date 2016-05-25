@@ -13,7 +13,16 @@ function($rootScope,$state,$http,$interval,dfo,Notification){
 	 if(!$rootScope.device){
 	 	 $rootScope.device = dfo.getMethod('device/fetchall').then(function(response){
  			return response;
- })
+ 		})
+	 }
+
+	  if(!$rootScope.userOrgID){
+	 	 $rootScope.userOrgID = dfo.getMethod('org/getID').then(function(response){
+	 	 	
+ 			return response;
+
+ 		})
+
 	 }
 
 	$rootScope.$on('$stateChangeStart', 
@@ -32,8 +41,8 @@ function($rootScope,$state,$http,$interval,dfo,Notification){
 	    	var now  = moment().toJSON();
 		var ms = moment(now).diff(moment(then));
 		var d = moment.duration(ms);
-		console.log(d._data.minutes);
-		if(parseFloat(d._data.minutes) > 30 ){
+		
+		if(parseFloat(d._data.minutes) > 100 ){
 			Notification.error({ title:'Session Exprired',message:'Please Login Again' ,delay : 4000 } );
 			sessionStorage.removeItem('time');	
 	    		event.preventDefault();

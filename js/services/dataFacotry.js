@@ -9,7 +9,7 @@ return{
             var deferred = $q.defer();
             $http({
              //url:'http://localhost/tankerApi/'+ api,
-               url:'http://52.62.42.42/api/'+api,              
+             url:'http://52.62.42.42/api/'+api,              
                 method:'GET'
             }).then(function(response){
                 deferred.resolve(response.data)
@@ -22,8 +22,8 @@ return{
     
   var deferred = $q.defer();      
   $http({
-    //url:'http://www.smartafarm.com.au/api/'+api,
-   // url:'http://localhost/tankerApi/'+ api,
+    
+    //url:'http://localhost/tankerApi/'+ api,
     url:'http://52.62.42.42/api/'+ api,    
     headers: { 'Content-Type': 'text/html' },
     method:'POST',

@@ -1,3 +1,12 @@
+
+/*
+Device Master Controller .
+Tanker app 
+Verision 1.0 
+Data Factory dfo calling for all values . 
+Time set
+
+ */
 var tankerapp = angular.module('tankerapp');
 tankerapp
 .controller('deviceCtrl', function($scope,$timeout,dfo,uiGridConstants,Notification) {	
@@ -102,10 +111,7 @@ $scope.ok = function(){
 
     }
    
-   /* console.log(rowEntity);
-    console.log(colDef);
-    console.log(newValue);
-    console.log(oldValue);*/
+  
   });
 };
 $scope.delete= function(){
